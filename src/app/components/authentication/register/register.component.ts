@@ -5,10 +5,9 @@ import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
-
   hide = true;
 
   email: any;
@@ -16,11 +15,9 @@ export class RegisterComponent implements OnInit {
   confirmPassword: any;
   displayName: any;
 
-  constructor(public authService: AuthService, private toastr: ToastrService) { }
+  constructor(public authService: AuthService, private toastr: ToastrService) {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 
   // tslint:disable-next-line: typedef
   onSubmit(formData) {
@@ -33,6 +30,6 @@ export class RegisterComponent implements OnInit {
         formData.value.confirmPassword
       );
     }
+    this.toastr.success('Verify your email address to login');
   }
-
 }
