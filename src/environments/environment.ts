@@ -5,16 +5,15 @@
 export const environment = {
   production: false,
 
-    firebase: {
-      apiKey: 'AIzaSyB3mBUPgJ-drLGaMass8FdKRyJzToqEOa4',
-      authDomain: 'userauth-3c76a.firebaseapp.com',
-      projectId: 'userauth-3c76a',
-      storageBucket: 'userauth-3c76a.appspot.com',
-      messagingSenderId: '329320770247',
-      appId: '1:329320770247:web:b0d6211ac58834b457ace2',
-      measurementId: 'G-DXEDLCP9XL'
-    }
-
+  firebase: {
+    apiKey: 'AIzaSyDytYcCwq_11nwcokhuOTZ8euKuqB5-i9s',
+    authDomain: 'mediacal-app-634ca.firebaseapp.com',
+    projectId: 'mediacal-app-634ca',
+    storageBucket: 'mediacal-app-634ca.appspot.com',
+    messagingSenderId: '267181201058',
+    appId: '1:267181201058:web:4c723bac78dd06949de9fb',
+    measurementId: 'G-WVYW6FX07M',
+  },
 
   // firebase: {
   //   apiKey: "AIzaSyAmf-iuESeQTocOFJRd-UJKXro3S1qhu0c",

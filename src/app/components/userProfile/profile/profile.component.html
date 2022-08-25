@@ -1,16 +1,25 @@
 <mat-toolbar>
-  <button type="button" (click)="drawer.toggle()" mat-icon-button class="toggler">
+  <button
+    type="button"
+    (click)="drawer.toggle()"
+    mat-icon-button
+    class="toggler"
+  >
     ☰
   </button>
   <span>Profile</span>
-
 </mat-toolbar>
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === true">
-    <img class="avatar mat-elevation-z8" src="{{profile.image}}" />
-    <h4 class="name">Dr.{{ profile.displayName }}</h4>
-    <p class="designation">{{ profile.department }}</p>
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === true"
+  >
+    <img class="avatar mat-elevation-z8" src="{{ profile?.image }}" />
+    <h4 class="name">Dr.{{ profile?.displayName }}</h4>
+    <p class="designation">{{ profile?.department }}</p>
     <hr />
     <a
       mat-list-item
@@ -23,9 +32,7 @@
     <a
       mat-list-item
       class="nav-item nav-link"
-
       href="/tasks"
-
       routerLinkActive="active"
       ><mat-icon>assignment</mat-icon>Tasks</a
     >
@@ -51,15 +58,15 @@
       routerLinkActive="active"
       ><mat-icon> contact_mail</mat-icon>Directory</a
     >
-   
+
     <a
-    mat-list-item
-    class="nav-item nav-link pointer"
-    *ngIf="(user | async)?.uid"
-    (click)="logout()"
-  >
-    <mat-icon>logout</mat-icon>Logout</a
-  >
+      mat-list-item
+      class="nav-item nav-link pointer"
+      *ngIf="(user | async)?.uid"
+      (click)="logout()"
+    >
+      <mat-icon>logout</mat-icon>Logout</a
+    >
   </mat-sidenav>
   <mat-sidenav-content>
     <div class="example-sidenav-content">
@@ -72,8 +79,10 @@
                 <div class="row">
                   <div class="col-md-4"></div>
                   <div class="col-md-4">
-                    <img [src]="profile.image" class="center user-img" />
-                    <h2 class="dr-name text-center">Dr: {{ profile.displayName }}</h2>
+                    <img [src]="profile?.image" class="center user-img" />
+                    <h2 class="dr-name text-center">
+                      Dr: {{ profile?.displayName }}
+                    </h2>
                     <div class="col-md-4"></div>
                   </div>
                 </div>
@@ -129,27 +138,27 @@
                             <tr>
                               <td>Name</td>
                               <td></td>
-                              <td>{{ profile.displayName }}</td>
+                              <td>{{ profile?.displayName }}</td>
                             </tr>
                             <tr>
                               <td>Email</td>
                               <td></td>
-                              <td>{{ profile.email }}</td>
+                              <td>{{ profile?.email }}</td>
                             </tr>
                             <tr>
                               <td>Department</td>
                               <td></td>
-                              <td>{{ profile.department }}</td>
+                              <td>{{ profile?.department }}</td>
                             </tr>
                             <tr>
                               <td>Position</td>
                               <td></td>
-                              <td>{{ profile.position }}</td>
+                              <td>{{ profile?.position }}</td>
                             </tr>
                             <tr>
                               <td>Contact</td>
                               <td></td>
-                              <td>{{ profile.contact }}</td>
+                              <td>{{ profile?.contact }}</td>
                             </tr>
                           </table>
                         </div>
@@ -159,7 +168,7 @@
                           *ngSwitchCase="'tab2'"
                         >
                           <br />
-                          <p class="text-light">{{ profile.bio }}</p>
+                          <p class="text-light">{{ profile?.bio }}</p>
                         </div>
                         <div
                           id="tab3"
@@ -168,13 +177,13 @@
                         >
                           <ul class="text-light">
                             <br /><br />
-                            <li>{{ profile.interest1 }}</li>
+                            <li>{{ profile?.interest1 }}</li>
                             <br />
-                            <li>{{ profile.interest2 }}</li>
+                            <li>{{ profile?.interest2 }}</li>
                             <br />
-                            <li>{{ profile.interest3 }}</li>
+                            <li>{{ profile?.interest3 }}</li>
                             <br />
-                            <li>{{ profile.interest4 }}</li>
+                            <li>{{ profile?.interest4 }}</li>
                             <br />
                           </ul>
                         </div>
@@ -189,8 +198,8 @@
             <div class="col-md-2"></div>
           </div>
         </div>
-       </div>
-        </div>
+      </div>
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
 
@@ -278,9 +287,7 @@
                         name="position"
                         required
                       />
-                      <label for="position" class="input-label"
-                        >Position</label
-                      >
+                      <label for="position" class="input-label">Position</label>
                     </div>
                     <div class="input">
                       <input
@@ -343,7 +350,7 @@
                       <label class="input-label text-area">Interest</label>
                     </div>
                     <br />
-                    <button class="action-button" >Submit</button>
+                    <button class="action-button">Submit</button>
                   </form>
                 </div>
               </div>
@@ -358,4 +365,4 @@
       <div class="col-md-4"></div>
     </div>
   </div>
-  </div>
+</div>
