@@ -1,9 +1,7 @@
-# CONSULT APP
+# Dr. Little
 
-> About Us
-> A clinical communication and collaboration platform that coordinates
-
-        activities and data flow between health workers.
+This is a clinical communication and collaboration platform that coordinates
+activities and data flow between health workers
 
 # Demo
 
