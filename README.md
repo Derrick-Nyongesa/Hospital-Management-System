@@ -1,24 +1,32 @@
+# CONSULT APP
 
-# Dr. Little
 > About Us
-Doctor Little Kenya is a charitable humanitarian organization founded in 2016, which focuses on improving the living standards of the community at large by primarily addressing the welfare of little children.We offer the best standards of care for disadvantaged children in the community, impart resources for patients on knowledge about their health and, create a platform for stakeholders and organizations to support the community. 
+> A clinical communication and collaboration platform that coordinates
 
+        activities and data flow between health workers.
 
 # Demo
+
 Here is a demo link []()
 
 # Landing Page
+
 ![Landing page](https://raw.githubusercontent.com/Burence1/consult-frontend/dev/src/assets/images/login.png)
 
 # Register Page
+
 ![Register](https://raw.githubusercontent.com/Burence1/consult-frontend/dev/src/assets/images/reg.png)
+
 # Home Page
+
 ![Home-page](https://raw.githubusercontent.com/Burence1/consult-frontend/dev/src/assets/images/home.png)
 
 # Mobile Support
 
 # [Usage]()
+
 ## Development server
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.4.
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
