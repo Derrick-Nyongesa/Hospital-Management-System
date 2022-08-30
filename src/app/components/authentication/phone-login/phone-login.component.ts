@@ -70,7 +70,7 @@ export class PhoneLoginComponent implements OnInit {
       .then((result) => {
         this.user = result.user;
         console.log(result);
-        this.toastr.success('Welcome to Consult');
+        this.toastr.success('Welcome ');
         this.router.navigateByUrl('/home');
       })
       .catch((error) => {

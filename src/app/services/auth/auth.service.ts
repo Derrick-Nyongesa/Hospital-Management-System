@@ -43,7 +43,7 @@ export class AuthService {
             }
             else {
               console.log('Nice, it worked!');
-              this.toastr.success('Welcome to Consult!');
+              this.toastr.success('Welcome !');
               this.router.navigateByUrl('/home');
             }
       })
@@ -93,7 +93,7 @@ export class AuthService {
         const currentId = value.user.uid;
         const status = 'online';
         this.setUserData(value.user.email, value.user.displayName, status, currentId);
-        this.toastr.success('Welcome to Consult!');
+        this.toastr.success('Welcome !');
       })
       .catch((error: any) => {
         console.log('Something went wrong: ', error);
