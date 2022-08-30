@@ -1,6 +1,6 @@
 <div class="sidenav">
   <div class="login-main-text">
-    <img src="assets/images/cropped-consult.jpg" alt="LOGO" height="300px" width="400px">
+    <img src="assets/images/cropped-consult.png" alt="LOGO" height="300px" width="400px">
   </div>
 </div>
 <div class="main">
@@ -8,16 +8,16 @@
   <div class="col-md-6 col-sm-12">
      <div class="login-form">
         <form>
-          <button (click)="loginGoogle()" class="google" >
+          <button mat-raised-button (click)="loginGoogle()" class="google" >
             Signin With Google
           </button>
           <br>
           <small class="or center">or</small>
           <br>
-          <button routerLink="/email-login" class="email">Email</button>
+          <button mat-raised-button color="primary" routerLink="/email-login" class="email">Email</button>
           <br>
-          <small>Don't have an account? </small><a routerLink="/signup" routerLinkActive="active"
-             href=""><strong>Register</strong></a>
+          <!-- <small>Don't have an account? </small><a  routerLink="/signup" routerLinkActive="active"
+             href=""><strong>Register</strong></a> -->
         <br>
         </form>
      </div>
