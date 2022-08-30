@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'Consult';
+  title = 'Medical_APP';
 
   // tslint:disable-next-line: typedef
   ngOnInit() {}

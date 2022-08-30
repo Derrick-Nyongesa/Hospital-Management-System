@@ -375,3 +375,12 @@ label:after {
     background: #003060;
     color: white;
 }
+
+.get_started:hover{
+  text-decoration: underline;
+}
+
+.get_started{
+  color: #ddd;
+  text-decoration: none;
+}
