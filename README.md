@@ -9,7 +9,7 @@ Here is a demo link []()
 
 # Landing Page
 
-![Landing page](https://raw.githubusercontent.com/Burence1/consult-frontend/dev/src/assets/images/tasks.png)
+![Landing page](https://raw.githubusercontent.com/Burence1/consult-frontend/dev/src/assets/images/task.png)
 
 # Register Page
 
