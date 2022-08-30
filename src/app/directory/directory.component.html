@@ -19,10 +19,10 @@
   >
     <img
       class="avatar mat-elevation-z8"
-      src="{{profile.image}}"
+      src="{{profile?.image}}"
     />
-    <h4 class="name">Dr.{{ profile.displayName }}</h4>
-    <p class="designation">{{ profile.department }}</p>
+    <h4 class="name">Dr.{{ profile?.displayName }}</h4>
+    <p class="designation">{{ profile?.department }}</p>
     <hr />
     <a
       mat-list-item
@@ -32,13 +32,13 @@
       routerLinkActive="active"
       ><mat-icon>home</mat-icon> Home</a
     >
-    <a
+    <!-- <a
       mat-list-item
       class="nav-item nav-link"
       routerLink="/profile"
       routerLinkActive="active"
       ><mat-icon>contact_page</mat-icon>Profile</a
-    >
+    > -->
     <a
       mat-list-item
       class="nav-item nav-link"
@@ -52,15 +52,9 @@
       routerLink="/convolist"
       routerLinkActive="active"
       ><mat-icon>forum</mat-icon
-      ><span matBadge="4" matBadgeOverlap="false">Chat</span></a
+      ><span matBadge="" matBadgeOverlap="false">Chat</span></a
     >
-    <a
-      mat-list-item
-      class="nav-item nav-link"
-      routerLink="about"
-      routerLinkActive="active"
-      ><mat-icon>contact_support</mat-icon>Help</a
-    >
+    <hr>
     <a
       mat-list-item
       class="nav-item nav-link pointer"

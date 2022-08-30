@@ -1,4 +1,4 @@
-# Dr. Little
+# Medical APP
 
 This is a clinical communication and collaboration platform that coordinates
 activities and data flow between health workers
@@ -9,11 +9,11 @@ Here is a demo link []()
 
 # Landing Page
 
-![Landing page](https://raw.githubusercontent.com/Burence1/consult-frontend/dev/src/assets/images/login.png)
+![Landing page](https://raw.githubusercontent.com/Burence1/consult-frontend/dev/src/assets/images/tasks.png)
 
 # Register Page
 
-![Register](https://raw.githubusercontent.com/Burence1/consult-frontend/dev/src/assets/images/reg.png)
+![Register](https://raw.githubusercontent.com/Burence1/consult-frontend/dev/src/assets/images/directory.png)
 
 # Home Page
 
