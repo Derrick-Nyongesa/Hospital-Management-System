@@ -7,17 +7,7 @@ activities and data flow between health workers
 
 Here is a demo link []()
 
-# Landing Page
 
-![Landing page](https://raw.githubusercontent.com/Burence1/consult-frontend/dev/src/assets/images/task.png)
-
-# Register Page
-
-![Register](https://raw.githubusercontent.com/Burence1/consult-frontend/dev/src/assets/images/directory.png)
-
-# Home Page
-
-![Home-page](https://raw.githubusercontent.com/Burence1/consult-frontend/dev/src/assets/images/home.png)
 
 # Mobile Support
 
