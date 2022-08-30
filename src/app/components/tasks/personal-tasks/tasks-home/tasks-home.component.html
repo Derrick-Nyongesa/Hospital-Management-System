@@ -1,9 +1,13 @@
 <mat-toolbar>
-  <button type="button" (click)="drawer.toggle()" mat-icon-button class="toggler">
+  <!-- <button type="button" (click)="drawer.toggle()" mat-icon-button class="toggler">
     ☰
-  </button>
+  </button> -->
+  
   <span>Tasks</span>
 </mat-toolbar>
+<div class="container">
+  <br><h2 class="about">Tasks/ <a href="/home">Home</a></h2>
+</div>
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer class="sidenav" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === true">
@@ -43,23 +47,9 @@
       routerLink="/convolist"
       routerLinkActive="active"
       ><mat-icon>forum</mat-icon
-      ><span matBadge="4" matBadgeOverlap="false">Chat</span></a
+      ><span matBadge="" matBadgeOverlap="false">Chat</span></a
     >
-    <a
-      mat-list-item
-      class="nav-item nav-link"
-      routerLink="/about"
-      routerLinkActive="active"
-      ><mat-icon>contact_support</mat-icon>Help</a
-    >
-
-    <a
-      mat-list-item
-      class="nav-item nav-link"
-      routerLink="/directory"
-      routerLinkActive="active"
-      ><mat-icon> contact_mail</mat-icon>Directory</a
-    >
+    
 
     <!-- <a
       mat-list-item
