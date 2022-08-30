@@ -35,6 +35,7 @@
     "ng-mat-carousel": "^0.11.1",
     "ngx-perfect-scrollbar": "^10.1.1",
     "ngx-toastr": "^14.0.0",
+    "ngx-ui-loader": "^10.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
