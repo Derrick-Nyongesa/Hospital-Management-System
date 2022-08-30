@@ -7,9 +7,9 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer class="sidenav" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === true">
-    <img class="avatar mat-elevation-z8" src="{{profile.image}}" />
-    <h4 class="name">Dr.{{ profile.displayName }}</h4>
-    <p class="designation">{{ profile.department }}</p>
+    <img class="avatar mat-elevation-z8" src="{{profile?.image}}" />
+    <h4 class="name">Dr.{{ profile?.displayName }}</h4>
+    <p class="designation">{{ profile?.department }}</p>
    <mat-divider></mat-divider>
    <a
       mat-list-item
@@ -42,23 +42,18 @@
       routerLink="/convolist"
       routerLinkActive="active"
       ><mat-icon>forum</mat-icon
-      ><span matBadge="4" matBadgeOverlap="false">Chat</span></a
+      ><span matBadge="" matBadgeOverlap="false">Chat</span></a
     >
+    <hr>
     <a
       mat-list-item
-      class="nav-item nav-link"
-      routerLink="/about"
-      routerLinkActive="active"
-      ><mat-icon>contact_support</mat-icon>Help</a
+      class="nav-item nav-link pointer"
+      *ngIf="user?.uid"
+      (click)="logout()"
     >
-
-    <a
-      mat-list-item
-      class="nav-item nav-link"
-      routerLink="/directory"
-      routerLinkActive="active"
-      ><mat-icon> contact_mail</mat-icon>Directory</a
+      <mat-icon>logout</mat-icon>Logout</a
     >
+    
 
     <!-- <a
       mat-list-item

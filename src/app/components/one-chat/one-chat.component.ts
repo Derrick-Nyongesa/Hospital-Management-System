@@ -197,4 +197,8 @@ export class OneChatComponent implements OnInit {
       firebase.database().ref(`messages/${key}`).remove();
     }
   }
+
+  logout() {
+    this.auth.logout();
+  }
 }
