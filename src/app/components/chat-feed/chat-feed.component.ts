@@ -1,6 +1,20 @@
-import { Component, OnInit, ElementRef, ViewChild, AfterViewChecked, Input } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ElementRef,
+  ViewChild,
+  AfterViewChecked,
+  Input,
+} from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import {
+  FormControl,
+  FormGroupDirective,
+  FormBuilder,
+  FormGroup,
+  NgForm,
+  Validators,
+} from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 import firebase from 'firebase/app';
 import 'firebase/auth';
@@ -13,13 +27,19 @@ import { map, shareReplay } from 'rxjs/operators';
 import { ProfileService } from 'src/app/services/profile.service';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { Profile } from 'src/app/profile';
-
-
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
-  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+  isErrorState(
+    control: FormControl | null,
+    form: FormGroupDirective | NgForm | null
+  ): boolean {
     const isSubmitted = form && form.submitted;
-    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+    return !!(
+      control &&
+      control.invalid &&
+      (control.dirty || control.touched || isSubmitted)
+    );
   }
 }
 
@@ -38,15 +58,15 @@ export const snapshotToArray = (snapshot: any) => {
 @Component({
   selector: 'app-chat-feed',
   templateUrl: './chat-feed.component.html',
-  styleUrls: ['./chat-feed.component.css']
+  styleUrls: ['./chat-feed.component.css'],
 })
-export class ChatFeedComponent implements OnInit{
+export class ChatFeedComponent implements OnInit {
   //@ViewChild('scroller') private feedScroll: ElementRef;
   @ViewChild('chatcontent') chatcontent: ElementRef;
   scrolltop: any | null;
   updateM: Chatmessage = {
-    message: ''
-  }
+    message: '',
+  };
   chatForm: FormGroup;
   chatname = '';
   roomname = '';
@@ -59,49 +79,71 @@ export class ChatFeedComponent implements OnInit{
   rooms: any;
   matcher = new MyErrorStateMatcher();
   admin: any;
-  msg:any;
+  msg: any;
   profile: Profile;
   currentId: string;
   isHandset$: Observable<boolean> = this.breakpointObserver
-  .observe(Breakpoints.Handset)
-  .pipe(
-    map((result) => result.matches),
-    shareReplay()
-  );
-  constructor(private Auth: AngularFireAuth, private db: AngularFireDatabase, private router: Router,
-              private route: ActivatedRoute,
-              private formBuilder: FormBuilder,
-              private breakpointObserver: BreakpointObserver,
-              private profileService: ProfileService,
-              private auth: AuthService,) {
-    this.Auth.authState.subscribe(auth => {
+    .observe(Breakpoints.Handset)
+    .pipe(
+      map((result) => result.matches),
+      shareReplay()
+    );
+  constructor(
+    private Auth: AngularFireAuth,
+    private db: AngularFireDatabase,
+    private router: Router,
+    private route: ActivatedRoute,
+    private formBuilder: FormBuilder,
+    private breakpointObserver: BreakpointObserver,
+    private profileService: ProfileService,
+    private auth: AuthService,
+    private ngxService: NgxUiLoaderService
+  ) {
+    this.Auth.authState.subscribe((auth) => {
       if (auth !== undefined && auth !== null) {
         this.user = auth;
       }
-      this.getUser().valueChanges().subscribe(a => {
-        this.userName = a;
-        this.chatname = this.userName.displayName;
-      });
+      this.getUser()
+        .valueChanges()
+        .subscribe((a) => {
+          this.userName = a;
+          this.chatname = this.userName.displayName;
+        });
 
       this.roomname = this.route.snapshot.params.roomname;
-      firebase.database().ref('chats/').on('value', resp => {
-        const chats = snapshotToArray(resp);
-        this.chats = chats.filter(x => x.roomname === this.roomname);
-        console.log(this.chats);
-        setTimeout(() => this.scrolltop = this.chatcontent.nativeElement.scrollHeight, 500);
-      });
+      firebase
+        .database()
+        .ref('chats/')
+        .on('value', (resp) => {
+          const chats = snapshotToArray(resp);
+          this.chats = chats.filter((x) => x.roomname === this.roomname);
+          console.log(this.chats);
+          setTimeout(
+            () =>
+              (this.scrolltop = this.chatcontent.nativeElement.scrollHeight),
+            500
+          );
+        });
 
-      firebase.database().ref('roomusers/').orderByChild('roomname').equalTo(this.roomname).on('value', (resp2: any) => {
-        const roomusers = snapshotToArray(resp2);
-        this.users = roomusers.filter(x => x.status === 'online');
-      });
+      firebase
+        .database()
+        .ref('roomusers/')
+        .orderByChild('roomname')
+        .equalTo(this.roomname)
+        .on('value', (resp2: any) => {
+          const roomusers = snapshotToArray(resp2);
+          this.users = roomusers.filter((x) => x.status === 'online');
+        });
 
-      firebase.database().ref('rooms/').on('value', resp => {
-        // this.rooms = [];
-        const rooms = snapshotToArray(resp);
-        this.rooms = rooms.filter(x => x.roomname === this.roomname)
-        this.admin=this.rooms
-      });
+      firebase
+        .database()
+        .ref('rooms/')
+        .on('value', (resp) => {
+          // this.rooms = [];
+          const rooms = snapshotToArray(resp);
+          this.rooms = rooms.filter((x) => x.roomname === this.roomname);
+          this.admin = this.rooms;
+        });
     });
     this.findProfiles();
     this.auth.user.subscribe(
@@ -124,7 +166,7 @@ export class ChatFeedComponent implements OnInit{
     );
   }
 
-  findProfiles(){}
+  findProfiles() {}
 
   // tslint:disable-next-line: typedef
   getUser() {
@@ -133,18 +175,28 @@ export class ChatFeedComponent implements OnInit{
     return this.db.object(path);
   }
 
-
   ngOnInit(): void {
     this.chatForm = this.formBuilder.group({
-      message: [null, Validators.required]
+      message: [null, Validators.required],
     });
+    this.ngxService.start(); // start foreground spinner of the master loader with 'default' taskId
+    // Stop the foreground loading after 5s
+    setTimeout(() => {
+      this.ngxService.stop(); // stop foreground spinner of the master loader with 'default' taskId
+    }, 2000);
   }
 
   // tslint:disable-next-line: typedef
   onFormSubmit(form: any) {
     var today = new Date();
-    var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-    var time = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
+    var date =
+      today.getFullYear() +
+      '-' +
+      (today.getMonth() + 1) +
+      '-' +
+      today.getDate();
+    var time =
+      today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
     var dateTime = date + ' ' + time;
 
     const chat = form;
@@ -155,23 +207,29 @@ export class ChatFeedComponent implements OnInit{
     const newMessage = firebase.database().ref('chats/').push();
     newMessage.set(chat);
     this.chatForm = this.formBuilder.group({
-      'message': [null, Validators.required]
+      message: [null, Validators.required],
     });
   }
 
   deleteMsg(uid: any) {
-    const key = uid
+    const key = uid;
     var del = confirm('Are you sure you want to delete this message?');
     if (del) {
       firebase.database().ref(`chats/${key}`).remove();
     }
   }
 
-  updateMsg(uid: any, message:any) {
-    const key = uid
+  updateMsg(uid: any, message: any) {
+    const key = uid;
     var today = new Date();
-    var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-    var time = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
+    var date =
+      today.getFullYear() +
+      '-' +
+      (today.getMonth() + 1) +
+      '-' +
+      today.getDate();
+    var time =
+      today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
     var dateTime = date + ' ' + time;
 
     const chat = message;
@@ -189,7 +247,6 @@ export class ChatFeedComponent implements OnInit{
   //   this.feedScroll.nativeElement.scrollTop
   //     = this.feedScroll.nativeElement.scrollHeight;
   // }
-
 
   // tslint:disable-next-line: typedef
   // ngAfterViewChecked() {

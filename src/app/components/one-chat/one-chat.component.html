@@ -1,22 +1,34 @@
+<ngx-ui-loader
+  fgsType="three-strings"
+  overlayColor="#1c1c1c"
+  fgsColor="#219ebc"
+  pbColor="#219ebc"
+  [fgsSize]="200"
+></ngx-ui-loader>
 <mat-toolbar>
-  <button type="button" (click)="drawer.toggle()" mat-icon-button class="toggler">
+  <button
+    type="button"
+    (click)="drawer.toggle()"
+    mat-icon-button
+    class="toggler"
+  >
     ☰
   </button>
   <span>ChatFeed</span>
 </mat-toolbar>
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" >
-    <img class="avatar mat-elevation-z8" src="{{profile?.image}}" />
+  <mat-sidenav #drawer class="sidenav">
+    <img class="avatar mat-elevation-z8" src="{{ profile?.image }}" />
     <h4 class="name">Dr.{{ profile?.displayName }}</h4>
     <p class="designation">{{ profile?.department }}</p>
-   <mat-divider></mat-divider>
-   <a
-   mat-list-item
-   class="nav-item nav-link"
-   routerLink="/home"
-   routerLinkActive="active"
-   ><mat-icon>home</mat-icon>Home</a
- >
+    <mat-divider></mat-divider>
+    <a
+      mat-list-item
+      class="nav-item nav-link"
+      routerLink="/home"
+      routerLinkActive="active"
+      ><mat-icon>home</mat-icon>Home</a
+    >
 
     <a
       mat-list-item
@@ -28,9 +40,7 @@
     <a
       mat-list-item
       class="nav-item nav-link"
-
       href="/tasks"
-
       routerLinkActive="active"
       ><mat-icon>assignment</mat-icon>Tasks</a
     >
@@ -42,7 +52,7 @@
       ><mat-icon>forum</mat-icon
       ><span matBadge="" matBadgeOverlap="false">Chat</span></a
     >
-    <hr>
+    <hr />
     <a
       mat-list-item
       class="nav-item nav-link pointer"
@@ -64,63 +74,110 @@
   <mat-sidenav-content>
     <div>
       <mat-card>
-    <div class="example-container mat-elevation-z8">
-      <mat-drawer-container class="drawer-container">
-        <mat-drawer-content class="chat-pane">
-          <div #chatcontent [scrollTop]="scrolltop" class="chat-content">
-            <div class="message-box" *ngFor="let chat of chats">
-              <div class="chat-status" text-center *ngIf="chat.type==='join'||chat.type==='exit';else message">
-                <span class="chat-date">{{chat.date | date:'short'}}</span>
-                <span class="chat-content-center">{{chat.message}}</span>
-              </div>
-              <ng-template #message>
-                <div class="chat-message">
-                  <div class="right-bubble"
-                    [ngClass]="{'right-bubble': chat.chatname === chatname, 'left-bubble': chat.chatname !== chatname}">
-                    <span class="msg-name" *ngIf="chat.chatname === chatname">Me</span>
-                    <span class="msg-name" *ngIf="chat.chatname !== chatname">{{chat.chatname}}</span>
-                    <span class="msg-date"> at {{chat.date | date:'short'}}</span>
-                    <div class="msg-edit" *ngIf="chat.chatname === chatname">
-                      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-                        <mat-icon>more_vert</mat-icon>
-                      </button>
-                      <mat-menu #menu="matMenu">
-                        <!-- <button mat-menu-item data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
+        <div class="example-container mat-elevation-z8">
+          <mat-drawer-container class="drawer-container">
+            <mat-drawer-content class="chat-pane">
+              <div #chatcontent [scrollTop]="scrolltop" class="chat-content">
+                <div class="message-box" *ngFor="let chat of chats">
+                  <div
+                    class="chat-status"
+                    text-center
+                    *ngIf="
+                      chat.type === 'join' || chat.type === 'exit';
+                      else message
+                    "
+                  >
+                    <span class="chat-date">{{
+                      chat.date | date: "short"
+                    }}</span>
+                    <span class="chat-content-center">{{ chat.message }}</span>
+                  </div>
+                  <ng-template #message>
+                    <div class="chat-message">
+                      <div
+                        class="right-bubble"
+                        [ngClass]="{
+                          'right-bubble': chat.chatname === chatname,
+                          'left-bubble': chat.chatname !== chatname
+                        }"
+                      >
+                        <span
+                          class="msg-name"
+                          *ngIf="chat.chatname === chatname"
+                          >Me</span
+                        >
+                        <span
+                          class="msg-name"
+                          *ngIf="chat.chatname !== chatname"
+                          >{{ chat.chatname }}</span
+                        >
+                        <span class="msg-date">
+                          at {{ chat.date | date: "short" }}</span
+                        >
+                        <div
+                          class="msg-edit"
+                          *ngIf="chat.chatname === chatname"
+                        >
+                          <button
+                            mat-icon-button
+                            [matMenuTriggerFor]="menu"
+                            aria-label="Example icon-button with a menu"
+                          >
+                            <mat-icon>more_vert</mat-icon>
+                          </button>
+                          <mat-menu #menu="matMenu">
+                            <!-- <button mat-menu-item data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
                                                                     <mat-icon>edit</mat-icon>
                                                                     <span>Update</span>
                                                                   </button> -->
-                        <button mat-menu-item (click)="deleteMsg(chat.key)">
-                          <mat-icon>delete</mat-icon>
-                          <span>Delete</span>
-                        </button>
-                      </mat-menu>
-                    </div>
-                    <!-- <div class="msg-del"><span class="msg-name" *ngIf="chat.chatname === chatname"><button type="button"
+                            <button mat-menu-item (click)="deleteMsg(chat.key)">
+                              <mat-icon>delete</mat-icon>
+                              <span>Delete</span>
+                            </button>
+                          </mat-menu>
+                        </div>
+                        <!-- <div class="msg-del"><span class="msg-name" *ngIf="chat.chatname === chatname"><button type="button"
                           class="btn btn-danger" (click)="deleteMsg(chat.key)">Delete</button></span></div> -->
-                    <p text-wrap>{{chat.message}}</p>
-                  </div>
+                        <p text-wrap>{{ chat.message }}</p>
+                      </div>
+                    </div>
+                  </ng-template>
                 </div>
-              </ng-template>
-            </div>
-          </div>
-          <footer class="sticky-footer">
-            <form class="message-form" [formGroup]="chatForm" (ngSubmit)="onFormSubmit(chatForm.value)">
-              <mat-form-field class="message-form-field">
-                <input matInput placeholder="Enter message here" formControlName="message" [errorStateMatcher]="matcher">
-                <mat-error>
-                  <span>Enter your message</span>
-                </mat-error>
-                <button type="submit" [disabled]="!chatForm.valid" mat-button matSuffix mat-icon-button aria-label="Send">
-                  <mat-icon>send</mat-icon>
-                </button>
-              </mat-form-field>
-            </form>
-          </footer>
-        </mat-drawer-content>
-      </mat-drawer-container>
-    </div> 
-  </mat-card>
-  </div>
+              </div>
+              <footer class="sticky-footer">
+                <form
+                  class="message-form"
+                  [formGroup]="chatForm"
+                  (ngSubmit)="onFormSubmit(chatForm.value)"
+                >
+                  <mat-form-field class="message-form-field">
+                    <input
+                      matInput
+                      placeholder="Enter message here"
+                      formControlName="message"
+                      [errorStateMatcher]="matcher"
+                    />
+                    <mat-error>
+                      <span>Enter your message</span>
+                    </mat-error>
+                    <button
+                      type="submit"
+                      [disabled]="!chatForm.valid"
+                      mat-button
+                      matSuffix
+                      mat-icon-button
+                      aria-label="Send"
+                    >
+                      <mat-icon>send</mat-icon>
+                    </button>
+                  </mat-form-field>
+                </form>
+              </footer>
+            </mat-drawer-content>
+          </mat-drawer-container>
+        </div>
+      </mat-card>
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
 

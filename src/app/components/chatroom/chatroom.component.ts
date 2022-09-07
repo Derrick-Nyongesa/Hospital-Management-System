@@ -20,6 +20,7 @@ import { Profile } from 'src/app/profile';
 import { ProfileService } from 'src/app/services/profile.service';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { FileService } from 'src/app/services/files/file-service.service';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Component({
   selector: 'app-chatroom',
@@ -49,7 +50,8 @@ export class ChatroomComponent implements OnInit, AfterViewChecked {
     @Inject(AngularFireStorage)
     private storage: AngularFireStorage,
     @Inject(FileService)
-    private fileService: FileService
+    private fileService: FileService,
+    private ngxService: NgxUiLoaderService
   ) {
     this.findProfiles();
     this.auth.user.subscribe(
@@ -75,7 +77,13 @@ export class ChatroomComponent implements OnInit, AfterViewChecked {
   // tslint:disable-next-line: typedef
   findProfiles() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.ngxService.start(); // start foreground spinner of the master loader with 'default' taskId
+    // Stop the foreground loading after 5s
+    setTimeout(() => {
+      this.ngxService.stop(); // stop foreground spinner of the master loader with 'default' taskId
+    }, 2000);
+  }
 
   // tslint:disable-next-line: typedef
   logout() {
