@@ -1,21 +1,19 @@
-.container-wrapper{
-    display: flex;
-    font-size: 11.4px;
+.container-wrapper {
+  display: flex;
+  font-size: 11.4px;
 }
-mat-card{
-  
+mat-card {
   display: block;
 
   overflow: auto;
   height: 80vh;
-
 }
 mat-card::-webkit-scrollbar {
   width: 7px;
   height: 8px;
   background-color: #aaa; /* or add it to the track */
 }
-.all-tasks{
+.all-tasks {
   padding: 10px;
 }
 /* .all-tasks::-webkit-scrollbar {
@@ -24,86 +22,86 @@ mat-card::-webkit-scrollbar {
   background-color: #aaa; 
 } */
 
-
-.addbtn{
-    display: flex;
-    flex-direction: column;
-    
+.addbtn {
+  display: flex;
+  flex-direction: column;
 }
-.addbtn button{
+/* .addbtn button {
   background-color: #003060;
-    color: white;
-}
-.smallscreenbtns{
+  color: white;
+} */
+.smallscreenbtns {
   margin-top: 1rem;
   display: none;
 }
-.smallscreenbtns button{
+.smallscreenbtns button {
   background-color: #003060;
   color: white;
-  margin: .5rem;
+  margin: 0.5rem;
 }
-h2, p, a, button{
+h2,
+p,
+a,
+button {
   font-family: comfortaa;
 }
 :host {
-    display: block;
-  }
-  
-  .item {
-    margin-bottom: 10px;
-    cursor: pointer;
-  }
+  display: block;
+}
+
+.item {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
 mat-toolbar {
   background-color: #003060;
   display: flex;
   justify-content: space-between;
   color: white;
 }
-.nav-link{
+.nav-link {
   color: white;
 }
-.nav-link:hover{
-  color: #C0C0C0;
+.nav-link:hover {
+  color: #c0c0c0;
 }
 /* .addbtn button{
   background-color: deepskyblue;
   color: white;
 } */
 .all-tasks {
-  background-color: #AFE1AF;
-
+  background-color: #afe1af;
 }
-.in-progress{
+.in-progress {
   background-color: linen;
 }
-.done{
+.done {
   background-color: lavender;
 }
 @media only screen and (max-width: 1050px) {
-  .container-wrapper{
+  .container-wrapper {
     flex-direction: column;
   }
-  .container{
+  .container {
     max-width: 600px;
   }
-  .addbtn span{
+  .addbtn span {
     display: none;
   }
 }
 
-@media only screen and (max-width: 600px){
-    .container{
-      max-height: 600px;
-      margin-bottom: 1rem;
-    }
-    .addbtn{
-      display: none;
-    }
-    .smallscreenbtns{
-      display: flex;
-    }
-    .smallscreenbtns span{
-      display: none;
-    }
+@media only screen and (max-width: 600px) {
+  .container {
+    max-height: 600px;
+    margin-bottom: 1rem;
+  }
+  .addbtn {
+    display: none;
+  }
+  .smallscreenbtns {
+    display: flex;
+  }
+  .smallscreenbtns span {
+    display: none;
+  }
 }

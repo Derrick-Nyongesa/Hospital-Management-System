@@ -1,19 +1,37 @@
+<ngx-ui-loader
+  fgsType="three-strings"
+  overlayColor="#1c1c1c"
+  fgsColor="#219ebc"
+  pbColor="#219ebc"
+  [fgsSize]="200"
+></ngx-ui-loader>
 <mat-toolbar>
   <!-- <button type="button" (click)="drawer.toggle()" mat-icon-button class="toggler">
     ☰
   </button> -->
-  
+
   <span>Tasks</span>
 </mat-toolbar>
 <div class="container">
-  <br><h2 class="about">Tasks/ <a href="/home">Home</a></h2>
+  <br />
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb" style="font-size: 20px">
+      <li class="breadcrumb-item"><a href="/home">Home </a></li>
+      <li class="breadcrumb-item active" aria-current="page">Tasks</li>
+    </ol>
+  </nav>
 </div>
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === true">
-      <img class="avatar mat-elevation-z8" src="" />
-      <h4 class="name">Dr.</h4>
-      <p class="designation"></p>
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === true"
+  >
+    <img class="avatar mat-elevation-z8" src="" />
+    <h4 class="name">Dr.</h4>
+    <p class="designation"></p>
     <mat-divider></mat-divider>
 
     <a
@@ -34,13 +52,11 @@
     <a
       mat-list-item
       class="nav-item nav-link"
-
       href="/patients"
-
       routerLinkActive="active"
       ><mat-icon>assignment</mat-icon>Page</a
     >
-   
+
     <a
       mat-list-item
       class="nav-item nav-link"
@@ -49,7 +65,6 @@
       ><mat-icon>forum</mat-icon
       ><span matBadge="" matBadgeOverlap="false">Chat</span></a
     >
-    
 
     <!-- <a
       mat-list-item
@@ -63,34 +78,35 @@
   <mat-sidenav-content>
     <div class="content-wrapper">
       <div class="container-fluid">
-          <div class="container-fluid">
-            <div class="row">
-                <div class="tabs col-md-11">
-                    <h2 class="mt-3 text-center">Tasks Board</h2>
-                    <mat-tab-group animationDuration="0ms">
-                      
-                      <!-- common tasks -->
-                      <mat-tab class="kanban" label="Kanban">
-                        <app-tasks></app-tasks>
-                    </mat-tab>
-                        <!-- calendar -->
-                        <mat-tab class="cal" label="Calendar">
-                          <app-task-calendar></app-task-calendar>
-                       </mat-tab>
-                    </mat-tab-group>
-                </div>
-                <div class="small-screen">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="tabs col-md-11">
+              <h2 class="mt-3 text-center">Tasks Board</h2>
+              <mat-tab-group
+                animationDuration="0ms"
+                mat-align-tabs="center"
+                #tabGroup
+                [selectedIndex]="activeTab"
+              >
+                <!-- common tasks -->
+                <mat-tab class="kanban" label="Kanban"
+                  ><br />
                   <app-tasks></app-tasks>
-                </div>
-                <div class="col-md-1">
-        
-              </div>
+                </mat-tab>
+                <!-- calendar -->
+                <mat-tab class="cal" label="Calendar"
+                  ><br />
+                  <app-task-calendar></app-task-calendar>
+                </mat-tab>
+              </mat-tab-group>
             </div>
+            <div class="small-screen">
+              <app-tasks></app-tasks>
+            </div>
+            <div class="col-md-1"></div>
+          </div>
         </div>
-   </div>
-   </div>
-
-
+      </div>
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
-

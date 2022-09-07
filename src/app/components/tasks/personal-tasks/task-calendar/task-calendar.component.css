@@ -1,15 +1,16 @@
-
 .btn-cal {
-    background-color: deepskyblue;
+  background-color: #003060;
+  color: #fff;
 }
-.dailyE{
-    background-color: beige;
+.dailyE {
+  background-color: #003060;
+  color: #fff;
 }
 .highlights-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
 }
-.container{
-    font-family: 'Lato', sans-serif;
+.container {
+  font-family: "Lato", sans-serif;
 }
