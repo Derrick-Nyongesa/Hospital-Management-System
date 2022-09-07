@@ -1,5 +1,6 @@
 import { FollowService } from './services/follow/follow.service';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgxSpinnerModule } from 'ngx-spinner';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFireAuthModule } from '@angular/fire/auth';
@@ -77,6 +78,7 @@ import { AboutComponent } from './components/about/about.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { TaskCalendarComponent } from './components/tasks/personal-tasks/task-calendar/task-calendar.component';
 // import{ init } from 'emailjs-com';
+import { NgxUiLoaderModule } from 'ngx-ui-loader';
 
 @NgModule({
   declarations: [
@@ -147,8 +149,11 @@ import { TaskCalendarComponent } from './components/tasks/personal-tasks/task-ca
     MatInputModule,
     MatDialogModule,
     MatListModule,
+    NgxSpinnerModule,
+    NgxUiLoaderModule,
   ],
   providers: [MessagingService, AsyncPipe, FollowService],
   bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {}
