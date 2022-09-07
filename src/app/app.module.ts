@@ -20,7 +20,6 @@ import { RegisterComponent } from './components/authentication/register/register
 import { EmailComponent } from './components/authentication/email/email.component';
 import { ForgotPasswordComponent } from './components/authentication/forgot-password/forgot-password.component';
 
-
 import { HomePageComponent } from './components/home/home-page/home-page.component';
 import { NavbarComponent } from './components/home/navbar/navbar.component';
 import { ChatroomComponent } from './components/chatroom/chatroom.component';
@@ -33,15 +32,17 @@ import { DropzoneDirective } from './dropzone.directive';
 import { ToastrModule } from 'ngx-toastr';
 import { MatCarouselModule } from 'ng-mat-carousel';
 
-
-
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { NotFoundComponent } from './components/error-handling/not-found/not-found.component';
 import { DirectoryComponent } from './directory/directory.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
-import {NgxMatDatetimePickerModule, NgxMatNativeDateModule, NgxMatTimepickerModule} from '@angular-material-components/datetime-picker';
+import {
+  NgxMatDatetimePickerModule,
+  NgxMatNativeDateModule,
+  NgxMatTimepickerModule,
+} from '@angular-material-components/datetime-picker';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
@@ -76,7 +77,6 @@ import { AboutComponent } from './components/about/about.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { TaskCalendarComponent } from './components/tasks/personal-tasks/task-calendar/task-calendar.component';
 // import{ init } from 'emailjs-com';
-
 
 @NgModule({
   declarations: [
@@ -136,7 +136,10 @@ import { TaskCalendarComponent } from './components/tasks/personal-tasks/task-ca
     NgxMatTimepickerModule,
     NgxMatNativeDateModule,
     MatIconModule,
-    CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory,
+    }),
     MatGridListModule,
     MatCardModule,
     MatButtonModule,
@@ -144,9 +147,8 @@ import { TaskCalendarComponent } from './components/tasks/personal-tasks/task-ca
     MatInputModule,
     MatDialogModule,
     MatListModule,
-    
   ],
   providers: [MessagingService, AsyncPipe, FollowService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
