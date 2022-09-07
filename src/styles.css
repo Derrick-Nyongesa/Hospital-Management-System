@@ -85,3 +85,23 @@ progress::-webkit-progress-value {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+.green-snackbar {
+  background: #219ebc;
+  color: white;
+}
+.green-snackbar button {
+  background-color: white;
+  color: #219ebc;
+  border: none;
+}
+
+.red-snackbar {
+  background: #f44336;
+  color: white;
+}
+.red-snackbar button {
+  background-color: white;
+  color: #f44336 !important;
+  border: none;
+}

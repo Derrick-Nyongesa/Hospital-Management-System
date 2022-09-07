@@ -48,6 +48,7 @@ import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
 import { LayoutModule } from '@angular/cdk/layout';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -151,6 +152,7 @@ import { NgxUiLoaderModule } from 'ngx-ui-loader';
     MatListModule,
     NgxSpinnerModule,
     NgxUiLoaderModule,
+    MatSnackBarModule,
   ],
   providers: [MessagingService, AsyncPipe, FollowService],
   bootstrap: [AppComponent],
