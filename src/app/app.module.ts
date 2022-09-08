@@ -80,6 +80,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { TaskCalendarComponent } from './components/tasks/personal-tasks/task-calendar/task-calendar.component';
 // import{ init } from 'emailjs-com';
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -153,6 +154,7 @@ import { NgxUiLoaderModule } from 'ngx-ui-loader';
     NgxSpinnerModule,
     NgxUiLoaderModule,
     MatSnackBarModule,
+    NgbModule,
   ],
   providers: [MessagingService, AsyncPipe, FollowService],
   bootstrap: [AppComponent],

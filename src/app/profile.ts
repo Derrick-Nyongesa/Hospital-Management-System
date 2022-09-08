@@ -7,9 +7,5 @@ export class Profile {
   department?: string;
   position?: string;
   contact?: number;
-  interest1?: string;
-  interest2?: string;
-  interest3?: string;
-  interest4?: string;
   bio?: string;
 }
