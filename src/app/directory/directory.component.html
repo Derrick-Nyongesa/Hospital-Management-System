@@ -7,7 +7,21 @@
   >
     ☰
   </button>
-  <span>Directory</span>
+  <span
+    style="
+      color: #003060;
+      font-size: 30px;
+      font-weight: bold;
+      background-color: #efff;
+      width: 12%;
+      padding-top: 5px;
+      padding-left: 5px;
+      padding-bottom: 5px;
+      border-radius: 20px;
+      margin-left: 20px;
+    "
+    >Directory</span
+  >
 </mat-toolbar>
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav
@@ -17,10 +31,7 @@
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
     [opened]="(isHandset$ | async) === true"
   >
-    <img
-      class="avatar mat-elevation-z8"
-      src="{{profile?.image}}"
-    />
+    <img class="avatar mat-elevation-z8" src="{{ profile?.image }}" />
     <h4 class="name">Dr.{{ profile?.displayName }}</h4>
     <p class="designation">{{ profile?.department }}</p>
     <hr />
@@ -54,7 +65,7 @@
       ><mat-icon>forum</mat-icon
       ><span matBadge="" matBadgeOverlap="false">Chat</span></a
     >
-    <hr>
+    <hr />
     <a
       mat-list-item
       class="nav-item nav-link pointer"
@@ -66,38 +77,52 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <div class="col-12"></div>
-   <div class="grid-container">
+    <div class="grid-container">
       <form class="form-inline">
-        <label for="Search Directory" class="text-dark mb-2 "> <strong>Search Directory</strong></label>
-        <input id="search" type="search" class="form-control" name="searchInput" placeholder="Search professional profiles" #searchInput="ngModel" [(ngModel)]="searchText" style="width: 50%;" >
-        <button type="submit" class="btn btn-outline-primary btn-search" (click)="searchText=''">X</button>
+        <label for="Search Directory" class="text-dark mb-2">
+          <strong>Search Directory</strong></label
+        >
+        <input
+          id="search"
+          type="search"
+          class="form-control"
+          name="searchInput"
+          placeholder="Search professional profiles"
+          #searchInput="ngModel"
+          [(ngModel)]="searchText"
+          style="width: 50%"
+        />
+        <button
+          type="submit"
+          class="btn btn-outline-primary btn-search"
+          (click)="searchText = ''"
+        >
+          X
+        </button>
       </form>
-          
-   
-        <div class="container">
-          <div class="" *ngFor='let profile of profiles'>
-            <div *ngIf="filterCondition(profile)">
-              <a class="card1" [routerLink]="['user-profile', profile.id]">
-                <h3>{{profile.displayName}}</h3>
-                <img [src]=" profile.image " class=" mt-5 avatar">
-                <p class="small">Works in our organization</p>
-                <ul class="list">
-                  <mat-card>
-                    <li><strong>Email:</strong>  {{ profile.email }}</li>
-                    <li><strong>Department:</strong> {{ profile.department }}</li>
-                    <li><strong>Position:</strong> {{ profile.position }}</li>
-                    <li><strong>Contact:</strong> {{ profile.contact }}</li>
-                  </mat-card>
-                </ul>
-                <div class="go-corner" href="#">
-                  <div class="go-arrow">
-                    →
-                  </div>
-                </div>
-              </a>
-            </div>
+
+      <div class="container">
+        <div class="" *ngFor="let profile of profiles">
+          <div *ngIf="filterCondition(profile)">
+            <a class="card1" [routerLink]="['user-profile', profile.id]">
+              <h3>{{ profile.displayName }}</h3>
+              <img [src]="profile.image" class="mt-5 avatar" />
+              <p class="small">Works in our organization</p>
+              <ul class="list">
+                <mat-card>
+                  <li><strong>Email:</strong> {{ profile.email }}</li>
+                  <li><strong>Department:</strong> {{ profile.department }}</li>
+                  <li><strong>Position:</strong> {{ profile.position }}</li>
+                  <li><strong>Contact:</strong> {{ profile.contact }}</li>
+                </mat-card>
+              </ul>
+              <div class="go-corner" href="#">
+                <div class="go-arrow">→</div>
+              </div>
+            </a>
           </div>
         </div>
-  </div>
+      </div>
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
