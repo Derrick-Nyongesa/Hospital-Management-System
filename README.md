@@ -1,6 +1,9 @@
 # Medical APP
 
 ![developer](https://img.shields.io/badge/Developer-Derrick%20Daniel%20Nyongesa-blue)
+
+#
+
 This is a clinical communication and collaboration platform that coordinates
 activities and data flow between health workers
 
