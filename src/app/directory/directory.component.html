@@ -9,20 +9,24 @@
   </button>
   <span
     style="
-      color: #003060;
-      font-size: 30px;
-      font-weight: bold;
-      background-color: #efff;
-      width: 12%;
       padding-top: 5px;
       padding-left: 5px;
       padding-bottom: 5px;
       border-radius: 20px;
       margin-left: 20px;
     "
-    >Directory</span
-  >
+    ><img src="../../assets/images/title.png" alt=""
+  /></span>
 </mat-toolbar>
+<div class="container">
+  <br />
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb" style="font-size: 20px">
+      <li class="breadcrumb-item"><a class="_link_" href="/home">Home </a></li>
+      <li class="breadcrumb-item active" aria-current="page">Directory</li>
+    </ol>
+  </nav>
+</div>
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav
     #drawer
@@ -78,30 +82,7 @@
   <mat-sidenav-content>
     <div class="col-12"></div>
     <div class="grid-container">
-      <form class="form-inline">
-        <label for="Search Directory" class="text-dark mb-2">
-          <strong>Search Directory</strong></label
-        >
-        <input
-          id="search"
-          type="search"
-          class="form-control"
-          name="searchInput"
-          placeholder="Search professional profiles"
-          #searchInput="ngModel"
-          [(ngModel)]="searchText"
-          style="width: 50%"
-        />
-        <button
-          type="submit"
-          class="btn btn-outline-primary btn-search"
-          (click)="searchText = ''"
-        >
-          X
-        </button>
-      </form>
-
-      <div class="container">
+      <div class="container-fluid">
         <div class="" *ngFor="let profile of profiles">
           <div *ngIf="filterCondition(profile)">
             <a class="card1" [routerLink]="['user-profile', profile.id]">
