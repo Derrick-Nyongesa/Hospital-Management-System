@@ -116,10 +116,10 @@ progress::-webkit-progress-value {
   border: none;
 }
 
-button:hover,
+/* button:hover,
 a:hover {
   opacity: 0.7;
-}
+} */
 
 input,
 select,
@@ -129,7 +129,7 @@ textarea {
   margin: 8px 0;
   display: inline-block;
   border: none !important;
-
+  border-bottom: 1px solid #00c6ff !important ;
   outline: none !important;
   color: #00c6ff !important;
   box-shadow: none !important;

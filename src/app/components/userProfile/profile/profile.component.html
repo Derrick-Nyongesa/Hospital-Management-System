@@ -9,19 +9,14 @@
   </button>
   <span
     style="
-      color: #003060;
-      font-size: 30px;
-      font-weight: bold;
-      background-color: #efff;
-      width: 8%;
       padding-top: 5px;
       padding-left: 5px;
       padding-bottom: 5px;
       border-radius: 20px;
       margin-left: 20px;
     "
-    >Profile</span
-  >
+    ><img src="../../../../assets/images/title.png" alt=""
+  /></span>
 </mat-toolbar>
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav
@@ -31,7 +26,17 @@
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
     [opened]="(isHandset$ | async) === true"
   >
-    <img class="avatar mat-elevation-z8" src="{{ profile?.image }}" />
+    <div *ngIf="profile?.image">
+      <img class="avatar mat-elevation-z8" src="{{ profile?.image }}" />
+    </div>
+
+    <div *ngIf="!profile?.image">
+      <img
+        class="avatar mat-elevation-z8"
+        src="../../../assets/profile.png"
+        alt=""
+      />
+    </div>
     <h4 class="name">Dr.{{ profile?.displayName }}</h4>
     <p class="designation">{{ profile?.department }}</p>
     <hr />
@@ -60,7 +65,11 @@
     >
     <hr />
 
-    <a mat-list-item class="nav-item nav-link pointer" (click)="logout()">
+    <a
+      mat-raised-button
+      class="nav-item nav-link pointer _logout"
+      (click)="logout()"
+    >
       <mat-icon>logout</mat-icon>Logout</a
     >
   </mat-sidenav>
@@ -76,7 +85,7 @@
             <img src="../../../assets/profile.png" alt="" />
           </div>
           <div class="profile-nav-info">
-            <h3 class="user-name" style="color: #003060">
+            <h3 class="user-name" style="color: #021b79">
               {{ profile?.displayName }}
             </h3>
             <div class="address" *ngIf="profile?.position">
@@ -110,7 +119,6 @@
                 <button
                   class="createbtn"
                   mat-raised-button
-                  color="warn"
                   id="Create-post"
                   (click)="open(mymodal)"
                 >
@@ -125,7 +133,7 @@
               <div class="">
                 <h1
                   style="
-                    color: #003060;
+                    color: #021b79;
                     text-decoration: underline;
                     margin-top: 10px;
                   "
@@ -146,15 +154,18 @@
           </h4>
           <button
             type="button"
-            class="close"
+            class="close _logout"
             mat-raised-button
-            color="warn"
             aria-label="Close"
             (click)="modal.dismiss('Cross click')"
+            style="color: #fff"
           >
             <span aria-hidden="true">CLOSE</span>
           </button>
         </div>
+        <p class="text-center">
+          <strong><span class="text-danger">*</span>Fill all fields</strong>
+        </p>
         <form
           (ngSubmit)="updateProfile()"
           #quoteForm="ngForm"
@@ -181,6 +192,7 @@
               [(ngModel)]="imageInput"
               name="image"
               (change)="showPreview($event)"
+              accept=".jpeg, .jpg, .png"
             />
           </div>
           <div class="input">
@@ -229,8 +241,16 @@
           <button
             class="action-button"
             mat-raised-button
-            color="warn"
             (click)="modal.close('Save click')"
+            [disabled]="
+              !bioInput ||
+              !displayNameInput ||
+              !imageInput ||
+              !contactInput ||
+              !positionInput ||
+              !departmentInput ||
+              !imageInput
+            "
           >
             Submit
           </button>

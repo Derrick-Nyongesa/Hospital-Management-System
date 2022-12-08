@@ -26,7 +26,17 @@
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
     [opened]="(isHandset$ | async) === true"
   >
-    <img class="avatar mat-elevation-z8" src="{{ profile?.image }}" />
+    <div *ngIf="profile?.image">
+      <img class="avatar mat-elevation-z8" src="{{ profile?.image }}" />
+    </div>
+
+    <div *ngIf="!profile?.image">
+      <img
+        class="avatar mat-elevation-z8"
+        src="../../../assets/profile.png"
+        alt=""
+      />
+    </div>
     <h4 class="name">Dr.{{ profile?.displayName }}</h4>
     <p class="designation">{{ profile?.department }}</p>
     <mat-divider></mat-divider>
@@ -70,7 +80,7 @@
       *ngIf="(user | async)?.uid"
       (click)="logout()"
     >
-      Logout</a
+      <mat-icon>logout</mat-icon>Logout</a
     >
   </mat-sidenav>
   <mat-sidenav-content>

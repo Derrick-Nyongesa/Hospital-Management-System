@@ -172,12 +172,23 @@ input {
   color: #fff;
   border: 0;
   display: hide;
+  background: #00c6ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #0072ff,
+    #00c6ff
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #0072ff,
+    #00c6ff
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-.action-button:hover {
+/* .action-button:hover {
   outline: 0;
   background-color: white;
   color: #003060;
-}
+} */
 
 .card-info {
   padding: 1rem 1rem;
@@ -265,7 +276,18 @@ hr {
   font-size: 40px;
 }
 mat-toolbar {
-  background: #003060;
+  background: #0575e6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #021b79,
+    #0575e6
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #021b79,
+    #0575e6
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   color: white;
 }
 
@@ -276,7 +298,18 @@ mat-sidenav {
   margin: 16px;
   width: 200px;
   border-right: none;
-  background: #003060;
+  background: #0575e6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #021b79,
+    #0575e6
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #021b79,
+    #0575e6
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   color: white;
   border-radius: 10px;
   padding: 16px;
@@ -299,6 +332,10 @@ mat-sidenav {
 
 mat-sidenav-container {
   height: calc(100vh - 65px);
+  /* overflow: hidden;
+  background: url(../../../../assets/images/photo-1528460033278-a6ba57020470.avif);
+  background-repeat: no-repeat;
+  background-size: cover; */
 }
 .update {
   background-color: #8597a3;
@@ -531,7 +568,7 @@ mat-divider {
 }
 
 .profile-side p i {
-  color: #003060;
+  color: #021b79;
   margin-right: 10px;
 }
 
@@ -558,7 +595,17 @@ button.createbtn {
   outline: none;
   margin-bottom: 10px;
   transition: background 0.3s ease-in-out;
-  box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.3);
+  background: #00c6ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #0072ff,
+    #00c6ff
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #0072ff,
+    #00c6ff
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 button.chatbtn:hover,
