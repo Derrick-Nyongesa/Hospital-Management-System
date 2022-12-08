@@ -1,232 +1,257 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
 
-.container-fluid{
-    color: #000;
-    overflow-x: hidden;
-    height: 100%;
-    background-color: #003060;
-    background-repeat: no-repeat;
-    background: linear-gradient(-90deg, #007dfa, #783ce7, #003060, #3477b9);
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
-}
+/* .container-fluid {
+  color: #000;
+  overflow-x: hidden;
+  height: 100%;
+  background-color: red;
+  background-repeat: no-repeat;
+  background: linear-gradient(-90deg, #007dfa, #783ce7, #003060, #3477b9);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+} */
 
 button {
-    padding: 0.5em;
-    width: 200%;
-    cursor: pointer;
-    margin-bottom: 15px;
-    font-size: 1.3em;
-    font-family: 'Roboto', sans-serif;
-    text-shadow: 0  0.04em 0.04em #003060;
-    background-color: white;
-    transition: all 0.15s;
-    border-radius: 10px;
+  padding: 0.5em;
+  width: 200%;
+  cursor: pointer;
+  margin-bottom: 15px;
+  font-size: 1.3em;
+  font-family: "Roboto", sans-serif;
+  text-shadow: 0 0.04em 0.04em #003060;
+  background-color: white;
+  transition: all 0.15s;
+  border-radius: 50px !important;
 }
-
-
 
 .google {
-    background: #ffffff;
-    background-size: 25px;
+  background: #83a4d4; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #b6fbff,
+    #83a4d4
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #b6fbff,
+    #83a4d4
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-.google:hover{
-    text-shadow: 0 0 2em rgba(255,255,255,1);
-    color: white;
-    border-color: white;
-    background: #003060;
+.google:hover {
+  text-shadow: 0 0 2em rgba(255, 255, 255, 1);
+  color: white;
+  border-color: white;
+  background: #003060;
 }
 
 .email {
-    background: #003060;
-    background-size: 25px;
-    color: white;
+  background: #00c6ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #0072ff,
+    #00c6ff
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #0072ff,
+    #00c6ff
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: white;
 }
-.email:hover{
-    text-shadow: 0 0 2em rgb(67, 105, 233);
-    color: #003060;
-    border-color: white;
-    background: #ffffff;
+.email:hover {
+  text-shadow: 0 0 2em rgba(255, 255, 255, 1);
+  color: white;
+  border-color: white;
+  background: #003060;
 }
-
 
 .auth-btn {
-    background: #3B8598;
-    color: white;
+  background: #3b8598;
+  color: white;
 }
 
 input.input-txt {
-    background: #fff !important;
-    padding: 0.5em 1em;
-    font-size: 1.3em;
-    border: 1px solid #BBBBBB;
-    width: 90%;
-    margin-bottom: 1em;
+  background: #fff !important;
+  padding: 0.5em 1em;
+  font-size: 1.3em;
+  border: 1px solid #bbbbbb;
+  width: 90%;
+  margin-bottom: 1em;
 }
 
 /* new */
 
 .card0 {
-    box-shadow: 0px 4px 8px 0px #b3dcfc;
-    border-radius: 0px
+  box-shadow: 0px 4px 8px 0px #b3dcfc;
+  border-radius: 0px;
 }
 
 .card2 {
-    margin: 0px 40px;
-    margin-top: 16%;
+  margin: 0px 40px;
+  margin-top: 16%;
 }
 
 .logo {
-    width: 200px;
-    height: 80px;
-    margin-top: 20px;
-    margin-left: 35px
+  width: 200px;
+  height: 80px;
+  margin-top: 20px;
+  margin-left: 35px;
 }
 
 .image {
-    width: 360px;
-    height: 300px;
+  width: 360px;
+  height: 300px;
 }
 
 .border-line {
-    border-right: 1px solid #EEEEEE
+  border-right: 1px solid #eeeeee;
 }
 .line {
-    height: 1px;
-    width: 25%;
-    background-color: #E0E0E0;
-    margin-top: 10px
+  height: 1px;
+  width: 25%;
+  background-color: #e0e0e0;
+  margin-top: 10px;
 }
 
 .welcome {
-    width: 50%;
-    font-size: 30px;
-    font-weight: 700;
-    font-family: Comfortaa;
-    color: #003060;
+  width: 50%;
+  font-size: 30px;
+  font-weight: 700;
+  font-family: Comfortaa;
+  color: #003060;
 }
 
 .or {
-    margin: 3%;
-	margin-left: 90%;
-    display: flex;
-    justify-content: center;
-    font-size: 30px;
-    font-weight: 700;
-    font-family: Comfortaa;
-    color: #003060;
+  margin: 3%;
+  margin-left: 90%;
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: 700;
+  font-family: Comfortaa;
+  color: #003060;
 }
-.reg{
-    color: #003060;
+.reg {
+  color: #003060;
 }
 .text-sm {
-    font-size: 14px !important
+  font-size: 14px !important;
 }
 
 .bg-blue {
-    color: #fff;
-    background-color: #003060
+  color: #fff;
+  background-color: #003060;
 }
 
 @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @media screen and (max-width: 991px) {
-    .logo {
-        margin-left: 0px
-    }
+  .logo {
+    margin-left: 0px;
+  }
 
-    .image {
-        width: 300px;
-        height: 220px
-    }
+  .image {
+    width: 300px;
+    height: 220px;
+  }
 
-    .border-line {
-        border-right: none
-    }
+  .border-line {
+    border-right: none;
+  }
 
-    .card2 {
-        border-top: 1px solid #EEEEEE !important;
-        margin: 0px 15px
-    }
+  .card2 {
+    border-top: 1px solid #eeeeee !important;
+    margin: 0px 15px;
+  }
 }
 
-.main-head{
-    /* height: 150px; */
-	max-height: 100vh;
-    background: #FFF;
-   
+.main-head {
+  /* height: 150px; */
+  max-height: 100vh;
+  background: #fff;
 }
 
 .sidenav {
-    height: 100%;
-    background-color: #003060;
-    overflow-x: hidden;
-    padding-top: 20px;
+  height: 100%;
+  background: #0575e6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #021b79,
+    #0575e6
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #021b79,
+    #0575e6
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  overflow-x: hidden;
+  padding-top: 20px;
 }
 
-
 .main {
-    padding: 0px 10px;
+  padding: 0px 10px;
 }
 
 @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
+  .sidenav {
+    padding-top: 15px;
+  }
 }
 
 @media screen and (max-width: 450px) {
-    .login-form{
-        margin-top: 10%;
-    }
+  .login-form {
+    margin-top: 10%;
+  }
 
-    .register-form{
-        margin-top: 10%;
-    }
+  .register-form {
+    margin-top: 10%;
+  }
 }
 
-@media screen and (min-width: 768px){
-    .main{
-        margin-left: 40%; 
-    }
+@media screen and (min-width: 768px) {
+  .main {
+    margin-left: 40%;
+  }
 
-    .sidenav{
-        width: 40%;
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        left: 0;
-    }
+  .sidenav {
+    width: 40%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+  }
 
-    .login-form{
-        margin-top: 80%;
-    }
+  .login-form {
+    margin-top: 80%;
+  }
 
-    .register-form{
-        margin-top: 20%;
-    }
-}
-
-
-.login-main-text{
+  .register-form {
     margin-top: 20%;
-    padding: 60px;
-    color: #fff;
+  }
 }
 
-.login-main-text h2{
-    font-weight: 300;
+.login-main-text {
+  margin-top: 20%;
+  padding: 60px;
+  color: #fff;
 }
 
-.btn-black{
-    background-color: #000 !important;
-    color: #fff;
+.login-main-text h2 {
+  font-weight: 300;
+}
+
+.btn-black {
+  background-color: #000 !important;
+  color: #fff;
 }
