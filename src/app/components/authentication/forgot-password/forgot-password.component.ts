@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth/auth.service';
-import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Component({
   selector: 'app-forgot-password',
@@ -11,19 +10,9 @@ import { NgxUiLoaderService } from 'ngx-ui-loader';
 export class ForgotPasswordComponent implements OnInit {
   email: string;
 
-  constructor(
-    private auth: AuthService,
-    private router: Router,
-    private ngxService: NgxUiLoaderService
-  ) {}
+  constructor(private auth: AuthService, private router: Router) {}
 
-  ngOnInit(): void {
-    this.ngxService.start(); // start foreground spinner of the master loader with 'default' taskId
-    // Stop the foreground loading after 5s
-    setTimeout(() => {
-      this.ngxService.stop(); // stop foreground spinner of the master loader with 'default' taskId
-    }, 2000);
-  }
+  ngOnInit(): void {}
 
   // tslint:disable-next-line: typedef
   resetPassword(email) {
