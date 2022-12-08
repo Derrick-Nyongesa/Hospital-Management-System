@@ -1,49 +1,92 @@
 .consult {
-  background: #003060;
-  height: 100vh;
+  background: url(../../../../assets/images/photo-1528460033278-a6ba57020470.avif);
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.container-fluid
-{
+.container-fluid {
   padding: 0;
   margin: 0;
 }
 
-.row
-{
+.row {
   padding: 0;
   margin: 0;
 }
-
 
 .header {
   color: black;
 }
 
-.auth-btn{
-  background-color: #003060;
+.auth-btn {
+  background: #00c6ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #0072ff,
+    #00c6ff
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #0072ff,
+    #00c6ff
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: white;
+  width: 100%;
+  border-radius: 50px;
 }
 
+.forgot-btn {
+  margin-left: 5.5rem;
+  color: #fff;
+  border-radius: 50px;
+  /* width: 80%; */
+  background: #00c6ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #0072ff,
+    #00c6ff
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #0072ff,
+    #00c6ff
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 
-.text
- {
-   text-decoration: none;
- }
+input {
+  width: 100% !important;
+}
 
+.text {
+  text-decoration: none;
+}
 
- /* new */
+/* new */
 
- .card {
-  padding: 0px 10px;
-  border-radius: 20px;
-  width: 110%;
-  /* height: 100%; */
+.card {
+  padding: 0px 20px;
+  border-radius: 50px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
 .c1 {
-  background-color: #003060;
-  border-radius: 20px;
+  background: #0575e6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #021b79,
+    #0575e6
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #021b79,
+    #0575e6
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  border-radius: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 a {
@@ -51,17 +94,16 @@ a {
   font-size: 13px;
   border-radius: 7px;
   text-decoration: none;
-  color: black
+  color: black;
 }
 
 a:hover {
   color: #ffffff;
-  background-color: #003060
+  background-color: #003060;
 }
 
 .nav-link {
   padding: 1rem 1.4rem;
-  
 }
 
 .ac {
@@ -80,13 +122,9 @@ a:hover {
 }
 
 .sp1 {
-  font-size: 5px
+  font-size: 5px;
 }
 
-.sp1>span {
+.sp1 > span {
   background-color: #003060;
 }
-
-mat-card {    
-  width: 110%;     
-}  

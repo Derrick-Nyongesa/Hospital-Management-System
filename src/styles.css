@@ -121,6 +121,34 @@ a:hover {
   opacity: 0.7;
 }
 
+input,
+select,
+textarea {
+  width: 100% !important;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: none !important;
+
+  outline: none !important;
+  color: #00c6ff !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s !important;
+  -webkit-text-fill-color: #00c6ff !important;
+}
+
+.mat-form-field {
+  width: 100% !important;
+}
+
 /* ===================================================ANIMATIONS============================= */
 .animated {
   -webkit-animation-duration: 1s;

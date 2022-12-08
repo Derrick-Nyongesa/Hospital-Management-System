@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../../services/auth/auth.service';
 import { FormControl, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
-import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Component({
   selector: 'app-email',
@@ -26,17 +25,10 @@ export class EmailComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private toastr: ToastrService,
-    private ngxService: NgxUiLoaderService
+    private toastr: ToastrService
   ) {}
 
-  ngOnInit(): void {
-    this.ngxService.start(); // start foreground spinner of the master loader with 'default' taskId
-    // Stop the foreground loading after 5s
-    setTimeout(() => {
-      this.ngxService.stop(); // stop foreground spinner of the master loader with 'default' taskId
-    }, 2000);
-  }
+  ngOnInit(): void {}
 
   // tslint:disable-next-line: typedef
   onSubmit(formData) {
