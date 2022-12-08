@@ -18,6 +18,15 @@
     ><img src="../../../../assets/images/title.png" alt=""
   /></span>
 </mat-toolbar>
+<div class="container">
+  <br />
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb" style="font-size: 20px">
+      <li class="breadcrumb-item"><a class="_link_" href="/home">Home </a></li>
+      <li class="breadcrumb-item active" aria-current="page">Profile</li>
+    </ol>
+  </nav>
+</div>
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav
     #drawer
@@ -74,22 +83,21 @@
     >
   </mat-sidenav>
   <mat-sidenav-content>
-    <div class="content mat-elevation-z8">
-      <router-outlet></router-outlet>
+    <div style="margin-top: 20px">
       <div class="container">
         <div class="profile-header">
-          <div class="profile-img" *ngIf="profile?.image">
+          <div class="profile-img fade-in-text" *ngIf="profile?.image">
             <img [src]="profile?.image" width="200" alt="Profile Image" />
           </div>
           <div class="profile-img" *ngIf="!profile?.image">
             <img src="../../../assets/profile.png" alt="" />
           </div>
           <div class="profile-nav-info">
-            <h3 class="user-name" style="color: #021b79">
+            <h3 class="user-name fade-in-text" style="color: #021b79">
               {{ profile?.displayName }}
             </h3>
-            <div class="address" *ngIf="profile?.position">
-              <p id="state" class="state" style="font-size: 20px">
+            <div class="address fade-in-text" *ngIf="profile?.position">
+              <p id="state" class="state fade-in-text" style="font-size: 20px">
                 {{ profile?.position }}
               </p>
             </div>
@@ -105,14 +113,14 @@
           <div class="left-side">
             <div class="profile-side">
               <p class="user-mail">
-                <i class="fa fa-building" aria-hidden="true"></i
+                <i class="fa fa-building fade-in-text" aria-hidden="true"></i
                 >{{ profile?.department }}
               </p>
               <p class="mobile-no">
-                <i class="fa fa-phone"></i> {{ profile?.contact }}
+                <i class="fa fa-phone fade-in-text"></i> {{ profile?.contact }}
               </p>
               <p class="user-mail">
-                <i class="fa fa-envelope"></i> {{ profile?.email }}
+                <i class="fa fa-envelope fade-in-text"></i> {{ profile?.email }}
               </p>
 
               <div class="profile-btn">
@@ -140,7 +148,9 @@
                 >
                   BIOGRAPHY
                 </h1>
-                <p style="font-size: 20px; color: black">{{ profile?.bio }}</p>
+                <p style="font-size: 20px; color: black" class="fade-in-text">
+                  {{ profile?.bio }}
+                </p>
               </div>
             </div>
           </div>

@@ -163,6 +163,10 @@ input:-webkit-autofill:active {
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+._link_:hover {
+  text-decoration: none !important;
+}
+
 /* ===================================================ANIMATIONS============================= */
 .animated {
   -webkit-animation-duration: 1s;
