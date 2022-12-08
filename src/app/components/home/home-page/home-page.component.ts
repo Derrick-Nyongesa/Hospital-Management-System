@@ -10,7 +10,6 @@ import { Profile } from 'src/app/profile';
 import { MessagingService } from 'src/app/services/push-notifications/messaging.service';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
-import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Component({
   selector: 'app-home-page',
@@ -45,8 +44,7 @@ export class HomePageComponent implements OnInit {
     private storage: AngularFireStorage,
     @Inject(FileService)
     private fileService: FileService,
-    private messagingService: MessagingService,
-    private ngxService: NgxUiLoaderService
+    private messagingService: MessagingService
   ) {
     firebase
       .database()
@@ -94,11 +92,6 @@ export class HomePageComponent implements OnInit {
         console.log(user);
       }
     });
-    this.ngxService.start(); // start foreground spinner of the master loader with 'default' taskId
-    // Stop the foreground loading after 5s
-    setTimeout(() => {
-      this.ngxService.stop(); // stop foreground spinner of the master loader with 'default' taskId
-    }, 3000);
   }
   // tslint:disable-next-line: typedef
   logout() {
