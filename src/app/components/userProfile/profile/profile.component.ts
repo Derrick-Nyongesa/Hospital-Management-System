@@ -10,7 +10,6 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
-import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Component({
   selector: 'app-profile',
@@ -52,8 +51,7 @@ export class ProfileComponent implements OnInit {
     private storage: AngularFireStorage,
     @Inject(FileService)
     private fileService: FileService,
-    private modalService: NgbModal,
-    private ngxService: NgxUiLoaderService
+    private modalService: NgbModal
   ) {
     this.findProfiles();
     this.authService.user.subscribe(
@@ -105,16 +103,6 @@ export class ProfileComponent implements OnInit {
   // currentUser: User;
   // isUser: boolean;
   ngOnInit(): void {
-    this.ngxService.start(); // start foreground spinner of the master loader with 'default' taskId
-    // Stop the foreground loading after 5s
-    setTimeout(() => {
-      this.ngxService.stop(); // stop foreground spinner of the master loader with 'default' taskId
-    }, 2000);
-    // this.route.data.subscribe(
-    //   (data: {profile: Profile}) => {
-    //     this.profile = data.profile;
-    //   }
-    // );
     this.fileService.getImageDetailList();
   }
   // tslint:disable-next-line: typedef

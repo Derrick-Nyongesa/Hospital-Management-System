@@ -10,6 +10,7 @@ import { Profile } from 'src/app/profile';
 import { MessagingService } from 'src/app/services/push-notifications/messaging.service';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
+import $ from 'jquery';
 
 @Component({
   selector: 'app-home-page',
@@ -91,6 +92,24 @@ export class HomePageComponent implements OnInit {
         this.userEmail = user.email;
         console.log(user);
       }
+    });
+
+    function isScrolledIntoView(elem) {
+      var docViewTop = $(window).scrollTop();
+      var docViewBottom = docViewTop + $(window).height();
+
+      var elemTop = $(elem).offset().top;
+      var elemBottom = elemTop + $(elem).height();
+
+      return elemBottom <= docViewBottom && elemTop >= docViewTop;
+    }
+
+    $(window).scroll(function () {
+      $('.heading, .subheading, .animate').each(function () {
+        if (isScrolledIntoView(this) === true) {
+          $(this).addClass('animated bounceInUp');
+        }
+      });
     });
   }
   // tslint:disable-next-line: typedef
