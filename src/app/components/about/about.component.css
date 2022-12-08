@@ -117,12 +117,12 @@ ul {
   padding: 10%;
 }
 .how-section1 h4 {
-  color: #ff0000;
+  color: #021b79;
   font-weight: bold;
   font-size: 30px;
 }
 .how-section1 .subheading {
-  color: #003060;
+  color: #0575e6;
   font-size: 20px;
 }
 .how-section1 .row {
@@ -133,7 +133,7 @@ ul {
 }
 .how-img img {
   width: 50%;
-  box-shadow: 5px 10px #003060;
+  box-shadow: 5px 10px #021b79;
   border: 1px solid;
 }
 
@@ -184,7 +184,17 @@ p {
   font-size: 40px;
 }
 mat-toolbar {
-  background: #003060;
+  background: #0575e6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #021b79,
+    #0575e6
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #021b79,
+    #0575e6
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: white;
 }
 .nav-item {
@@ -194,7 +204,17 @@ mat-sidenav {
   margin: 16px;
   width: 200px;
   border-right: none;
-  background: #003060;
+  background: #0575e6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #021b79,
+    #0575e6
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #021b79,
+    #0575e6
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: white;
   border-radius: 10px;
   padding: 16px;
@@ -214,6 +234,9 @@ mat-sidenav {
 mat-sidenav-container {
   height: calc(100vh - 65px);
   overflow: hidden;
+  background: url(../../../assets/images/photo-1528460033278-a6ba57020470.avif);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .menu-button {
   width: 100%;

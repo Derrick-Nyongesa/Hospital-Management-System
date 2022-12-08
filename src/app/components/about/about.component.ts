@@ -1,6 +1,5 @@
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
-import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { Profile } from 'src/app/profile';
@@ -32,7 +31,6 @@ export class AboutComponent implements OnInit {
     );
 
   constructor(
-    private ngxService: NgxUiLoaderService,
     private breakpointObserver: BreakpointObserver,
     private auth: AuthService,
     private profileService: ProfileService
@@ -73,12 +71,6 @@ export class AboutComponent implements OnInit {
   findProfiles() {}
 
   ngOnInit(): void {
-    this.ngxService.start(); // start foreground spinner of the master loader with 'default' taskId
-    // Stop the foreground loading after 5s
-    setTimeout(() => {
-      this.ngxService.stop(); // stop foreground spinner of the master loader with 'default' taskId
-    }, 2000);
-
     this.user.subscribe((user) => {
       if (user) {
         this.userEmail = user.email;
