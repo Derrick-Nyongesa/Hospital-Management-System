@@ -14,7 +14,17 @@
   font-size: 40px;
 }
 mat-toolbar {
-  background: #003060;
+  background: #0575e6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #021b79,
+    #0575e6
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #021b79,
+    #0575e6
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: white;
 }
 .nav-item {
@@ -24,7 +34,8 @@ mat-sidenav {
   margin: 16px;
   width: 200px;
   border-right: none;
-  background: #003060;
+  background: red; /* fallback for old browsers */
+
   color: white;
   border-radius: 10px;
   padding: 16px;
@@ -237,27 +248,6 @@ mat-card {
 .wrapper {
   max-height: 70vh;
   overflow-y: auto;
-}
-
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* Track */
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-/* Handle */
-
-::-webkit-scrollbar-thumb {
-  background: #003060;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
 }
 
 /* ============================================================================================ */

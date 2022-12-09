@@ -7,10 +7,10 @@
   width: 200px;
 }
 
-.profile {
+/* .profile {
   background-color: #003060;
   padding-bottom: 100px;
-}
+} */
 
 .center {
   margin-top: 20px;
@@ -332,10 +332,10 @@ mat-sidenav {
 
 mat-sidenav-container {
   height: calc(100vh - 65px);
-  /* overflow: hidden;
+  overflow: hidden;
   background: url(../../../../assets/images/photo-1528460033278-a6ba57020470.avif);
   background-repeat: no-repeat;
-  background-size: cover; */
+  background-size: cover;
 }
 .update {
   background-color: #8597a3;
@@ -398,15 +398,6 @@ mat-divider {
   align-items: center;
 }
 
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* Track */
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
 .user-img {
   width: 150px;
   height: 150px;
@@ -426,17 +417,6 @@ mat-divider {
   background-color: rgba(255, 255, 255, 0.5);
 }
 
-/* Handle */
-
-::-webkit-scrollbar-thumb {
-  background: #003060;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
 /* **************************************PROFILE**************************************************** */
 
 .profile-header {
@@ -448,16 +428,15 @@ mat-divider {
   box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2);
 }
 
-.profile-img {
-  float: left;
+/* .profile-img {
   width: 340px;
   height: 200px;
-}
+} */
 
-.profile-img img {
+/* .profile-img img {
   border-radius: 50%;
-  height: 230px;
-  width: 230px;
+  height: 100px;
+  width: 100px;
   border: 5px solid #fff;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
   position: absolute;
@@ -465,6 +444,16 @@ mat-divider {
   top: 20px;
   z-index: 5;
   background: #fff;
+  
+} */
+.profile-img img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: 5px solid #fff;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  height: 100px;
+  width: 100px;
 }
 
 .profile-nav-info {
@@ -928,4 +917,88 @@ label.light {
   form {
     max-width: 480px;
   }
+}
+
+.card {
+  color: #fff;
+  width: 350px;
+  border-radius: 50px;
+  background: #0575e6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #021b79,
+    #0575e6
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #021b79,
+    #0575e6
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  /* box-shadow: 20px 20px 60px #913ca0, -20px -20px 60px #c552d8; */
+  border: none;
+}
+
+.neo-button {
+  width: 40px;
+  height: 40px;
+  outline: 0 !important;
+  cursor: pointer;
+  color: #fff;
+  font-size: 15px;
+  border: none;
+  margin-right: 10px;
+  border-radius: 50%;
+  background: #00c6ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #0072ff,
+    #00c6ff
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #0072ff,
+    #00c6ff
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.num {
+  color: #eee !important;
+}
+
+.line {
+  color: #fff;
+}
+
+.profile_button {
+  color: #fff;
+  padding: 10px;
+  border: none;
+  outline: 0 !important;
+  border-radius: 50px;
+
+  background: -webkit-linear-gradient(
+    to right,
+    #0072ff,
+    #00c6ff
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #0072ff,
+    #00c6ff
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+button:hover,
+a:hover {
+  opacity: 0.7;
+}
+
+._nav_ {
+  text-align: center;
+  top: 0px;
+  z-index: 1000;
+  position: sticky;
+  position: -webkit-sticky;
 }

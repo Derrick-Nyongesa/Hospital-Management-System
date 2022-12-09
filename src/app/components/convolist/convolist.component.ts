@@ -12,7 +12,6 @@ import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { ProfileService } from 'src/app/services/profile.service';
 import { Profile } from 'src/app/profile';
-import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Component({
   selector: 'app-convolist',
@@ -48,8 +47,7 @@ export class ConvolistComponent implements OnInit {
     private router: Router,
     private auth: AuthService,
     private chat: ChatService,
-    private profileService: ProfileService,
-    private ngxService: NgxUiLoaderService
+    private profileService: ProfileService
   ) {
     this.Auth.authState.subscribe((auth) => {
       if (auth !== undefined && auth !== null) {
@@ -142,11 +140,6 @@ export class ConvolistComponent implements OnInit {
 
   ngOnInit(): void {
     this.chat.setConvoname(this.convoname);
-    this.ngxService.start(); // start foreground spinner of the master loader with 'default' taskId
-    // Stop the foreground loading after 5s
-    setTimeout(() => {
-      this.ngxService.stop(); // stop foreground spinner of the master loader with 'default' taskId
-    }, 2000);
   }
 
   logout() {
