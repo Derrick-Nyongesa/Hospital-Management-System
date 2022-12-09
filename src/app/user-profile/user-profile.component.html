@@ -14,63 +14,67 @@
     ><img src="../../assets/images/title.png" alt=""
   /></span>
 </mat-toolbar>
-<div class="container">
-  <br />
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb" style="font-size: 20px">
-      <li class="breadcrumb-item"><a class="_link_" href="/home">Home</a></li>
-      <li class="breadcrumb-item">
-        <a class="_link_" href="/directory">Directory</a>
-      </li>
-      <li class="breadcrumb-item active" aria-current="page">User-Profile</li>
+<div class="_body">
+  <div class="c-subheader justify-content-between px-3">
+    <!-- Breadcrumb-->
+    <ol class="breadcrumb border-0 m-0 px-0 px-md-3">
+      <li class="breadcrumb-item"><a href="/home">HOME</a></li>
+      <li class="breadcrumb-item"><a href="directory">Directory</a></li>
+      <li class="breadcrumb-item active">User-Profile</li>
+      <!-- Breadcrumb Menu-->
     </ol>
-  </nav>
-</div>
-<div class="container">
-  <div class="profile-header">
-    <div class="profile-img" *ngIf="profile?.image">
-      <img [src]="profile?.image" width="200" alt="Profile Image" />
-    </div>
-    <div class="profile-img" *ngIf="!profile?.image">
-      <img src="../../../assets/profile.png" alt="" />
-    </div>
-    <div class="profile-nav-info">
-      <h3 class="user-name" style="color: #003060">
-        {{ profile?.displayName }}
-      </h3>
-      <div class="address" *ngIf="profile?.position">
-        <p id="state" class="state" style="font-size: 20px">
-          {{ profile?.position }}
-        </p>
-      </div>
-    </div>
   </div>
+  <div class="container d-flex justify-content-center" style="margin-top: 50px">
+    <div class="card p-3 py-4">
+      <div class="text-center">
+        <div class="profile-img" *ngIf="profile?.image">
+          <img [src]="profile?.image" class="rounded-circle" />
+        </div>
+        <div class="profile-img" *ngIf="!profile?.image">
+          <img
+            src="../../../assets/profile.png"
+            class="rounded-circle"
+            alt=""
+          />
+        </div>
 
-  <div class="main-bd">
-    <div class="left-side">
-      <div class="profile-side">
-        <p class="user-mail">
-          <i class="fa fa-building" aria-hidden="true"></i
-          >{{ profile?.department }}
-        </p>
-        <p class="mobile-no">
-          <i class="fa fa-phone"></i> {{ profile?.contact }}
-        </p>
-        <p class="user-mail">
-          <i class="fa fa-envelope"></i> {{ profile?.email }}
-        </p>
-      </div>
-    </div>
+        <h3 class="mt-2 fade-in-text">{{ profile?.displayName }}</h3>
+        <span class="mt-1 clearfix fade-in-text">{{ profile?.position }}</span>
 
-    <div class="right-side">
-      <div class="container">
-        <div class="">
-          <h1
-            style="color: #003060; text-decoration: underline; margin-top: 10px"
-          >
-            BIOGRAPHY
-          </h1>
-          <p style="font-size: 20px; color: black">{{ profile?.bio }}</p>
+        <div class="row mt-3 mb-3">
+          <div class="col-md-4" *ngIf="profile?.department">
+            <h5><mat-icon>work</mat-icon></h5>
+            <span class="num fade-in-text">{{ profile?.department }}</span>
+          </div>
+          <div class="col-md-4" *ngIf="profile?.contact">
+            <h5><mat-icon>phone_android</mat-icon></h5>
+            <span class="num fade-in-text">{{ profile?.contact }}</span>
+          </div>
+          <div class="col-md-4">
+            <h5><mat-icon>alternate_email</mat-icon></h5>
+            <span class="num fade-in-text">{{ profile?.email }}</span>
+          </div>
+        </div>
+
+        <hr class="line" />
+
+        <small class="mt-4 fade-in-text">{{ profile?.bio }}</small>
+        <div class="social-buttons mt-5">
+          <button class="neo-button">
+            <i class="bi bi-facebook"></i>
+          </button>
+          <button class="neo-button">
+            <i class="bi bi-linkedin"></i>
+          </button>
+          <button class="neo-button">
+            <i class="bi bi-instagram"></i>
+          </button>
+          <button class="neo-button">
+            <i class="bi bi-whatsapp"></i>
+          </button>
+          <button class="neo-button">
+            <i class="bi bi-twitter"></i>
+          </button>
         </div>
       </div>
     </div>
