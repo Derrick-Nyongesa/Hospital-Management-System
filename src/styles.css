@@ -16,6 +16,22 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+.c-subheader {
+  position: fixed;
+  margin-top: 0px;
+  padding: 10px;
+  left: 0;
+  width: 100%;
+  background: #3f4c6b;
+  z-index: 1000;
+  font-size: 20px;
+}
+
+._homeLink {
+  color: #fff;
+  text-decoration: none;
+}
+
 .hide {
   cursor: pointer;
 }
