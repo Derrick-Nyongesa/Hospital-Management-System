@@ -95,11 +95,15 @@
               Update your profile
             </div>
           </div>
-          <div class="profile-img">
+          <div class="profile-img" *ngIf="profile?.image">
             <img [src]="profile?.image" class="rounded-circle" />
           </div>
           <div class="profile-img" *ngIf="!profile?.image">
-            <img src="../../../assets/profile.png" alt="" />
+            <img
+              src="../../../assets/profile.png"
+              class="rounded-circle"
+              alt=""
+            />
           </div>
 
           <h3 class="mt-2 fade-in-text">{{ profile?.displayName }}</h3>

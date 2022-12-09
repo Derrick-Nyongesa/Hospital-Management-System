@@ -37,7 +37,18 @@ span {
   font-size: 40px;
 }
 mat-toolbar {
-  background: #003060;
+  background: #0575e6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #021b79,
+    #0575e6
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #021b79,
+    #0575e6
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   color: white;
 }
 .nav-item {
@@ -98,26 +109,7 @@ mat-divider {
   margin-bottom: 16px;
   background-color: rgba(255, 255, 255, 0.5);
 }
-::-webkit-scrollbar {
-  width: 10px;
-}
 
-/* Track */
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-/* Handle */
-
-::-webkit-scrollbar-thumb {
-  background: #003060;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
 @media only screen and (min-width: 600px) {
   .small-screen {
     display: none;
@@ -133,7 +125,7 @@ a:hover {
   text-decoration: none;
 }
 
-::ng-deep .mat-tab-labels {
+/* ::ng-deep .mat-tab-labels {
   border-bottom: 2px solid #003060;
   margin-top: 30px;
 }
@@ -157,4 +149,21 @@ a:hover {
   color: #003060;
   font-size: 1.15rem;
   font-weight: bold;
+} */
+::ng-deep .mat-tab-list .mat-tab-labels .mat-tab-label-active {
+  font-size: 1.15rem;
+  background: #021b79;
+  color: #ffffff;
+}
+
+::ng-deep .mat-tab-labels {
+  border-bottom: 2px solid #021b79;
+  border-top: 2px solid #021b79;
+  background: #f7f9fa;
+}
+
+::ng-deep .mat-tab-group.mat-primary .mat-ink-bar {
+  border-bottom: 2px solid #021b79;
+  height: 50px;
+  background: transparent;
 }
