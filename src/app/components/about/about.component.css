@@ -234,9 +234,6 @@ mat-sidenav {
 mat-sidenav-container {
   height: calc(100vh - 65px);
   overflow: hidden;
-  background: url(../../../assets/images/photo-1528460033278-a6ba57020470.avif);
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 .menu-button {
   width: 100%;
