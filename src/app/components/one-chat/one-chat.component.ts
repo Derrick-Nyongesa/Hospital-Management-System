@@ -21,7 +21,6 @@ import { map, shareReplay } from 'rxjs/operators';
 import { ProfileService } from 'src/app/services/profile.service';
 import { Profile } from 'src/app/profile';
 import { AuthService } from 'src/app/services/auth/auth.service';
-import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(
@@ -93,8 +92,7 @@ export class OneChatComponent implements OnInit {
     private formBuilder: FormBuilder,
     private breakpointObserver: BreakpointObserver,
     private profileService: ProfileService,
-    private auth: AuthService,
-    private ngxService: NgxUiLoaderService
+    private auth: AuthService
   ) {
     this.Auth.authState.subscribe((auth) => {
       if (auth !== undefined && auth !== null) {
@@ -118,18 +116,6 @@ export class OneChatComponent implements OnInit {
             console.log(this.convoname);
           });
         });
-
-      // this.roomname = this.route.snapshot.params.displayName;
-      // //console.log(this.roomname)
-      // firebase.database().ref('messages/').on('value', resp => {
-      //   const temporarychats = snapshotToArray(resp);
-      //   console.log(temporarychats)
-      //   console.log(this.chatname)
-      //   this.chats = temporarychats.filter(x => x.chatname === this.roomname || x.roomname === this.roomname)
-      //   console.log(this.chats)
-      //   console.log(this.convoname)
-      //   setTimeout(() => this.scrolltop = this.chatcontent.nativeElement.scrollHeight, 500);
-      // });
 
       this.roomname = this.route.snapshot.params.displayName;
       //console.log(this.roomname)
@@ -199,11 +185,6 @@ export class OneChatComponent implements OnInit {
       message: [null, Validators.required],
     });
     this.getConvo();
-    this.ngxService.start(); // start foreground spinner of the master loader with 'default' taskId
-    // Stop the foreground loading after 5s
-    setTimeout(() => {
-      this.ngxService.stop(); // stop foreground spinner of the master loader with 'default' taskId
-    }, 3000);
   }
   name: any;
   onFormSubmit(form: any) {

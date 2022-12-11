@@ -16,6 +16,10 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+._chatbtn:hover {
+  opacity: 0.7;
+}
+
 .c-subheader {
   position: fixed;
   margin-top: 0px;

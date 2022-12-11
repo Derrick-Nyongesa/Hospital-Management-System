@@ -27,7 +27,6 @@ import { map, shareReplay } from 'rxjs/operators';
 import { ProfileService } from 'src/app/services/profile.service';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { Profile } from 'src/app/profile';
-import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(
@@ -96,8 +95,7 @@ export class ChatFeedComponent implements OnInit {
     private formBuilder: FormBuilder,
     private breakpointObserver: BreakpointObserver,
     private profileService: ProfileService,
-    private auth: AuthService,
-    private ngxService: NgxUiLoaderService
+    private auth: AuthService
   ) {
     this.Auth.authState.subscribe((auth) => {
       if (auth !== undefined && auth !== null) {
@@ -179,11 +177,6 @@ export class ChatFeedComponent implements OnInit {
     this.chatForm = this.formBuilder.group({
       message: [null, Validators.required],
     });
-    this.ngxService.start(); // start foreground spinner of the master loader with 'default' taskId
-    // Stop the foreground loading after 5s
-    setTimeout(() => {
-      this.ngxService.stop(); // stop foreground spinner of the master loader with 'default' taskId
-    }, 2000);
   }
 
   // tslint:disable-next-line: typedef

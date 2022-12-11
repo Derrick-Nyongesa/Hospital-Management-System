@@ -1,6 +1,25 @@
 <div class="container">
-  <form class="example-form" [formGroup]="roomForm" (ngSubmit)="onFormSubmit(roomForm.value)">
-    <button mat-icon-button (click)="open(list)" class="end">
+  <form
+    class="example-form"
+    [formGroup]="roomForm"
+    (ngSubmit)="onFormSubmit(roomForm.value)"
+  >
+    <button
+      mat-raised-button
+      (click)="open(list)"
+      class="end _chatbtn"
+      style="
+        color: #fff;
+        background: -webkit-linear-gradient(
+          to right,
+          #0072ff,
+          #00c6ff
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #0072ff, #00c6ff);
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      "
+    >
       <span>Select</span> <mat-icon matSuffix>person_add</mat-icon>
     </button>
     <!-- <h2>Please enter new Room</h2>
@@ -20,10 +39,26 @@
 </div>
 
 <ng-template #list>
+  <button
+    mat-raised-button
+    (click)="closeModal()"
+    class="end"
+    style="
+      color: #fff;
+      background: -webkit-linear-gradient(to right, #ea384d, #d31027);
+      background: linear-gradient(to right, #ea384d, #d31027);
+    "
+  >
+    CLOSE
+  </button>
   <mat-list role="list" cdk-virtual-scroll-viewport itemSize="10" *ngIf="users">
-    <mat-list-item role="listitem" *ngFor="let x of users" (click)="onFormSubmit(x)">
+    <mat-list-item
+      role="listitem"
+      *ngFor="let x of users"
+      (click)="onFormSubmit(x)"
+    >
       <div>
-        {{ x?.displayName}}
+        {{ x?.displayName }}
       </div>
     </mat-list-item>
   </mat-list>

@@ -1,11 +1,18 @@
-<ngx-ui-loader
-  fgsType="three-strings"
-  overlayColor="#1c1c1c"
-  fgsColor="#219ebc"
-  pbColor="#219ebc"
-  [fgsSize]="200"
-></ngx-ui-loader>
-<mat-toolbar>
+<mat-toolbar
+  style="
+    background: #0575e6; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #021b79,
+      #0575e6
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #021b79,
+      #0575e6
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  "
+>
   <button
     type="button"
     (click)="drawer.toggle()"
@@ -16,23 +23,44 @@
   </button>
   <span
     style="
-      color: #003060;
-      font-size: 30px;
-      font-weight: bold;
-      background-color: #efff;
-      width: 12.5%;
       padding-top: 5px;
       padding-left: 5px;
       padding-bottom: 5px;
       border-radius: 20px;
       margin-left: 20px;
     "
-    >ChatFeed</span
-  >
+    ><img src="../../../assets/images/title.png" alt=""
+  /></span>
 </mat-toolbar>
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav">
-    <img class="avatar mat-elevation-z8" src="{{ profile?.image }}" />
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    style="
+      background: #0575e6; /* fallback for old browsers */
+      background: -webkit-linear-gradient(
+        to right,
+        #021b79,
+        #0575e6
+      ); /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(
+        to right,
+        #021b79,
+        #0575e6
+      ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    "
+  >
+    <div *ngIf="profile?.image">
+      <img class="avatar mat-elevation-z8" src="{{ profile?.image }}" />
+    </div>
+
+    <div *ngIf="!profile?.image">
+      <img
+        class="avatar mat-elevation-z8"
+        src="../../../assets/profile.png"
+        alt=""
+      />
+    </div>
     <h4 class="name">Dr.{{ profile?.displayName }}</h4>
     <p class="designation">{{ profile?.department }}</p>
     <mat-divider></mat-divider>
@@ -68,8 +96,8 @@
     >
     <hr />
     <a
-      mat-list-item
-      class="nav-item nav-link pointer"
+      mat-raised-button
+      class="nav-item nav-link pointer _logout"
       *ngIf="user?.uid"
       (click)="logout()"
     >
@@ -86,7 +114,19 @@
     > -->
   </mat-sidenav>
   <mat-sidenav-content>
-    <div>
+    <div class="c-subheader justify-content-between px-3">
+      <!-- Breadcrumb-->
+      <ol class="breadcrumb border-0 m-0 px-0 px-md-3">
+        <li class="breadcrumb-item">
+          <a href="/home" class="_homeLink"
+            ><i class="bi bi-house-door-fill"></i
+          ></a>
+        </li>
+        <li class="breadcrumb-item active" style="color: #fff">Chat Feed</li>
+        <!-- Breadcrumb Menu-->
+      </ol>
+    </div>
+    <div style="margin-top: 40px; padding-top: 20px">
       <mat-card>
         <div class="example-container mat-elevation-z8">
           <mat-drawer-container class="drawer-container">
@@ -102,7 +142,7 @@
                     "
                   >
                     <span class="chat-date">{{
-                      chat.date | date: "short"
+                      chat.date | date : "short"
                     }}</span>
                     <span class="chat-content-center">{{ chat.message }}</span>
                   </div>
@@ -126,7 +166,7 @@
                           >{{ chat.chatname }}</span
                         >
                         <span class="msg-date">
-                          at {{ chat.date | date: "short" }}</span
+                          at {{ chat.date | date : "short" }}</span
                         >
                         <div
                           class="msg-edit"
@@ -194,44 +234,3 @@
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
-
-<!-- <div class="example-container mat-elevation-z8">
-  <mat-drawer-container class="drawer-container">
-    <mat-drawer-content class="chat-pane">
-      <div #chatcontent [scrollTop]="scrolltop" class="chat-content">
-        <div class="message-box" *ngFor="let chat of chats">
-          <div class="chat-status" text-center *ngIf="chat.type==='join'||chat.type==='exit';else message">
-            <span class="chat-date">{{chat.date | date:'short'}}</span>
-            <span class="chat-content-center">{{chat.message}}</span>
-          </div>
-          <ng-template #message>
-            <div class="chat-message">
-              <div class="right-bubble"
-                [ngClass]="{'right-bubble': chat.chatname === chatname, 'left-bubble': chat.chatname !== chatname}">
-                <span class="msg-name" *ngIf="chat.chatname === chatname">Me</span>
-                <span class="msg-name" *ngIf="chat.chatname !== chatname">{{chat.chatname}}</span>
-                <span class="msg-date"> at {{chat.date | date:'short'}}</span>
-                <div class="msg-del"><span class="msg-name" *ngIf="chat.chatname === chatname"><button type="button"
-                      class="btn btn-danger" (click)="deleteMsg(chat.key)">Delete</button></span></div>
-                <p text-wrap>{{chat.message}}</p>
-              </div>
-            </div>
-          </ng-template>
-        </div>
-      </div>
-      <footer class="sticky-footer">
-        <form class="message-form" [formGroup]="chatForm" (ngSubmit)="onFormSubmit(chatForm.value)">
-          <mat-form-field class="message-form-field">
-            <input matInput placeholder="Enter message here" formControlName="message" [errorStateMatcher]="matcher">
-            <mat-error>
-              <span>Enter your message</span>
-            </mat-error>
-            <button type="submit" [disabled]="!chatForm.valid" mat-button matSuffix mat-icon-button aria-label="Send">
-              <mat-icon>send</mat-icon>
-            </button>
-          </mat-form-field>
-        </form>
-      </footer>
-    </mat-drawer-content>
-  </mat-drawer-container>
-</div> -->

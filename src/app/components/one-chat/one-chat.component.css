@@ -33,7 +33,7 @@ footer.sticky-footer {
   position: fixed;
   bottom: 0;
   left: 0;
-  width: 100%;
+  width: 90%;
   padding: 10px;
   background-color: #ffffff;
   border-top: solid 1px #efefef;
@@ -61,7 +61,7 @@ footer.sticky-footer {
 
 .chat-message .right-bubble {
   position: relative;
-  background: #003060;
+  background: #2948ff;
   /* border-radius: 10px; */
   color: white;
   padding: 5px 10px 10px;
@@ -69,9 +69,9 @@ footer.sticky-footer {
 }
 
 .chat-message .right-bubble span.msg-name {
-  font-size: 12px;
+  font-size: 16px;
   font-weight: bold;
-  color: green;
+  color: #d31027;
 }
 .chat-message .right-bubble span.msg-date {
   font-size: 10px;
@@ -85,7 +85,7 @@ footer.sticky-footer {
   width: 0;
   height: 0;
   border: 27px solid transparent;
-  border-left-color: #003060;
+  border-left-color: #2948ff;
   border-right: 0;
   border-top: 0;
   margin-top: -13.5px;
@@ -93,16 +93,16 @@ footer.sticky-footer {
 }
 .chat-message .left-bubble {
   position: relative;
-  background: #161818;
+  background: #01d28e;
   /* border-radius: 10px; */
   color: white;
   padding: 5px 10px 10px;
   left: 5%;
 }
 .chat-message .left-bubble span.msg-name {
-  font-size: 12px;
+  font-size: 16px;
   font-weight: bold;
-  color: blue;
+  color: #d31027;
 }
 .chat-message .left-bubble span.msg-date {
   font-size: 10px;
@@ -115,7 +115,7 @@ footer.sticky-footer {
   width: 0;
   height: 0;
   border: 27px solid transparent;
-  border-right-color: #161818;
+  border-right-color: #01d28e;
   border-left: 0;
   border-top: 0;
   margin-top: -13.5px;
@@ -171,7 +171,18 @@ footer.sticky-footer {
   font-size: 40px;
 }
 mat-toolbar {
-  background: #003060;
+  background: #0575e6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #021b79,
+    #0575e6
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #021b79,
+    #0575e6
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   color: white;
 }
 .nav-item {
@@ -181,7 +192,18 @@ mat-sidenav {
   margin: 16px;
   width: 200px;
   border-right: none;
-  background: #003060;
+  background: #0575e6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #021b79,
+    #0575e6
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #021b79,
+    #0575e6
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   color: white;
   border-radius: 10px;
   padding: 16px;
