@@ -122,6 +122,10 @@
                   type="submit"
                   [disabled]="!formData.valid"
                   class="auth-btn"
+                  style="
+                    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
+                      0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                  "
                 >
                   Sign In <i class="fas fa-sign-in-alt"></i>
                 </button>
@@ -135,7 +139,11 @@
                         class="header forgot-btn"
                         routerLink="/signup"
                         routerLinkActive="active"
-                        style="width: 100%"
+                        style="
+                          width: 100%;
+                          box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
+                            0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                        "
                         >Sign Up?</a
                       >
                     </p>
@@ -149,7 +157,11 @@
                         class="header forgot-btn"
                         routerLink="/password_reset"
                         routerLinkActive="active"
-                        style="width: 100%"
+                        style="
+                          width: 100%;
+                          box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
+                            0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                        "
                         >Forgot Password?</a
                       >
                     </p>
