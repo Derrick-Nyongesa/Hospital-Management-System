@@ -1,4 +1,4 @@
-# Medical APP
+# Hospital Management System
 
 ![developer](https://img.shields.io/badge/Developer-Derrick%20Daniel%20Nyongesa-blue)
 
