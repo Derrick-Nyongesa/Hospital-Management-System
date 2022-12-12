@@ -2,13 +2,12 @@ export const environment = {
   production: true,
 
   firebase: {
-    apiKey: 'AIzaSyDytYcCwq_11nwcokhuOTZ8euKuqB5-i9s',
-    authDomain: 'mediacal-app-634ca.firebaseapp.com',
-    projectId: 'mediacal-app-634ca',
-    storageBucket: 'mediacal-app-634ca.appspot.com',
-    messagingSenderId: '267181201058',
-    appId: '1:267181201058:web:4c723bac78dd06949de9fb',
-    measurementId: 'G-WVYW6FX07M',
+    apiKey: 'AIzaSyDLp1e9rr2HfmXJLFNxyw2Sih5hxs1yWTc',
+    authDomain: 'hospital-management-syst-38b4b.firebaseapp.com',
+    projectId: 'hospital-management-syst-38b4b',
+    storageBucket: 'hospital-management-syst-38b4b.appspot.com',
+    messagingSenderId: '948615297685',
+    appId: '1:948615297685:web:eb064c9f70987e451a399c',
   },
   // firebase: {
   //   apiKey: "AIzaSyAmf-iuESeQTocOFJRd-UJKXro3S1qhu0c",

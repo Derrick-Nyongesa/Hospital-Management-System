@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "mediacal-app-634ca"
-  }
+    "default": "hospital-management-syst-38b4b",
+    "production": "hospital-management-syst-38b4b"
+  },
+  "targets": {},
+  "etags": {}
 }
